@@ -1,0 +1,47 @@
+# Configuración del pipeline Noticiario de Hardware
+
+tts:
+  engine: edge                  # edge (voz neuronal, necesita internet) | piper (offline) | elevenlabs (no implementado)
+  fallback_engine: piper        # si el motor principal falla (ej. sin internet), sigue con este
+  edge_voice: es-CL-LorenzoNeural   # es-CL-CatalinaNeural (mujer), es-MX-JorgeNeural, es-AR-TomasNeural...
+  edge_rate: "+5%"              # velocidad: "+0%" normal, "+10%" más rápido, "-10%" más lento
+  edge_pitch: "+0Hz"
+  piper_model_path: "models/es_ES-davefx-medium.onnx"
+  piper_speed: 2.5               # 1.0 = normal, <1 más lento, >1 más rápido
+  piper_sentence_silence: 0.25   # pausa (s) entre oraciones
+  elevenlabs_api_key_env: "ELEVENLABS_API_KEY"   # nombre de la variable de entorno
+  elevenlabs_voice_id: ""
+
+music:
+  folder_path: "assets/music"    # elige un mp3 al azar de esta carpeta en cada corrida
+  volume_db: -22                 # cuánto se baja la música respecto a la voz
+  fade_in_sec: 2
+  fade_out_sec: 3
+  seed: null                      # fija un número (ej. 42) para repetir siempre la misma elección
+
+visuals:
+  images_dir: "assets/images"
+  channel_name: "Noticiario de Hardware"   # aparece arriba a la izquierda en cada tarjeta
+  episode_label: ""              # texto arriba a la derecha; vacío = fecha de hoy
+  placeholder_bg_color: "#111319"
+  placeholder_text_color: "#F5F5F5"
+  accent_color: "#4F8CFF"        # color de la etiqueta (NOTICIA 1...) y la barra lateral
+  ken_burns: true                # efecto de zoom lento sobre las imágenes fijas
+  ken_burns_zoom: 1.08
+
+video:
+  resolution: [1920, 1080]
+  fps: 30
+  output_path: "output/video_final.mp4"
+  encoder: auto                  # auto | nvenc (GPU NVIDIA) | libx264 (CPU)
+  parallel_jobs: 4               # bloques renderizados a la vez (NVENC en GeForce permite ~8 sesiones)
+
+output:
+  clean_intermediates: true      # borrar bloques.json, audio/, visuals/ y manifests al terminar (queda solo el video y fuentes.md)
+
+subtitles:
+  enabled: false                  # TODO: implementar con Whisper (ver README)
+
+parsing:
+  auto_segment_target_words: 130   # solo se usa si el guion NO trae etiquetas [TAG]
+  max_block_words: 220             # con etiquetas: un bloque más largo se parte en sub-bloques (misma imagen/titular, otro extracto)

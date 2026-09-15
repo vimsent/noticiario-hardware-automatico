@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Artefactos generados por el pipeline
+output/*
+assets/music/*
+!output/.gitkeep
+
+# Modelos de voz (pesados, no van al repo)
+models/*.onnx
+models/*.onnx.json
+
+# Claves / secretos
+.env
