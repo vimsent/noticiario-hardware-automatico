@@ -1,0 +1,5 @@
+{"version": "1.7.0", "autor": "mindicador.cl", "codigo": "dolar", "nombre": "Dólar observado", "unidad_medida": "Pesos", "serie": [
+  {"fecha": "2026-09-15T03:00:00.000Z", "valor": 957.53},
+  {"fecha": "2026-09-14T03:00:00.000Z", "valor": 940.91},
+  {"fecha": "2026-09-11T03:00:00.000Z", "valor": 938.10}
+]}

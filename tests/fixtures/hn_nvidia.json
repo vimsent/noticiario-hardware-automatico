@@ -1,0 +1,83 @@
+{
+ "exhaustive": {
+  "nbHits": false,
+  "typo": false
+ },
+ "exhaustiveNbHits": false,
+ "exhaustiveTypo": false,
+ "hits": [
+  {
+   "title": "Nvidia is the central bank of AI",
+   "url": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
+   "points": 582,
+   "created_at": "2026-09-12T15:08:27Z",
+   "created_at_i": 1789225707,
+   "objectID": "49673098",
+   "story_text": "<a href=\"https:&#x2F;&#x2F;archive.ph&#x2F;kt50V\" rel=\"nofollow\">https:&#x2F;&#x2F;archive.ph&#x2F;kt50V</a>"
+  },
+  {
+   "title": "Nvidia to acquire Hugging Face",
+   "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
+   "points": 329,
+   "created_at": "2026-09-03T12:10:33Z",
+   "created_at_i": 1788437433,
+   "objectID": "49548952",
+   "story_text": "<a href=\"https:&#x2F;&#x2F;blogs.nvidia.com&#x2F;blog&#x2F;nvidia-to-acquire-hugging-face&#x2F;\" rel=\"nofollow\">https:&#x2F;&#x2F;blogs.nvidia.com&#x2F;blog&#x2F;nvidia-to-acquire-hugging-face...</a>"
+  },
+  {
+   "title": "Nvidia dismisses \"circular financing\", says every $1 it invests brings back $100",
+   "url": "https://invezz.com/news/2026/09/11/nvidia-says-every-1-it-invests-brings-back-100-so-why-does-the-stock-keep-falling/",
+   "points": 137,
+   "created_at": "2026-09-13T10:29:18Z",
+   "created_at_i": 1789295358,
+   "objectID": "49682319",
+   "story_text": null
+  },
+  {
+   "title": "Georgi Gerganov on llama.cpp/ggml future after Nvidia acquisition of HuggingFace",
+   "url": "https://twitter.com/ggerganov/status/2095897173376618881",
+   "points": 76,
+   "created_at": "2026-09-04T17:12:22Z",
+   "created_at_i": 1788541942,
+   "objectID": "49567357",
+   "story_text": null
+  },
+  {
+   "title": "Tell HN: NVIDIA's Acquisition of HuggingFace was for $HuggingFace",
+   "url": null,
+   "points": 43,
+   "created_at": "2026-09-03T22:08:41Z",
+   "created_at_i": 1788473321,
+   "objectID": "49557813",
+   "story_text": "NVIDIA acquired Hugging Face for $12,930,300,000<p>The math: 0x1F917 = 1×65536 + 15×4096 + 9×256 + 1×16 + 7 = 129,303. And U+1F917 is officially named HUGGING FACE — ."
+  },
+  {
+   "title": "Nvidia's Jensen Huang says 'AGI has arrived' and congratulates OpenAI",
+   "url": "https://www.businessinsider.com/nvidia-jensen-huang-agi-openai-astra-ai-2026-9",
+   "points": 39,
+   "created_at": "2026-09-07T05:23:31Z",
+   "created_at_i": 1788758611,
+   "objectID": "49594189",
+   "story_text": null
+  }
+ ],
+ "hitsPerPage": 6,
+ "nbHits": 99,
+ "nbPages": 17,
+ "page": 0,
+ "params": "query=nvidia&tags=story&numericFilters=created_at_i%3E1788383404%2Ccreated_at_i%3C1789593004&hitsPerPage=6&advancedSyntax=true&analyticsTags=backend",
+ "processingTimeMS": 17,
+ "processingTimingsMS": {
+  "_request": {
+   "roundTrip": 19
+  },
+  "fetch": {
+   "query": 10,
+   "scanning": 5,
+   "total": 16
+  },
+  "total": 17
+ },
+ "query": "nvidia",
+ "serverTimeMS": 18
+}

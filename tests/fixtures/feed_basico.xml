@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Feed de prueba</title>
+  <link>https://ejemplo.com</link>
+  <item>
+    <title>Intel lanza Panther Lake  - Tom's Hardware</title>
+    <link>https://www.Ejemplo.com/noticias/intel-panther-lake/?utm_source=rss#top</link>
+    <description><![CDATA[<p>Intel anuncia <b>Panther Lake</b> con Xe3.</p>]]></description>
+    <pubDate>Wed, 10 Sep 2026 15:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Noticia vieja fuera de la ventana</title>
+    <link>https://ejemplo.com/vieja</link>
+    <description>Muy antigua.</description>
+    <pubDate>Mon, 01 Jun 2026 10:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Sin fecha</title>
+    <link>https://ejemplo.com/sin-fecha</link>
+    <description>No trae pubDate.</description>
+  </item>
+  <item>
+    <title>Sin link</title>
+    <description>Se ignora.</description>
+    <pubDate>Wed, 10 Sep 2026 15:00:00 +0000</pubDate>
+  </item>
+</channel>
+</rss>

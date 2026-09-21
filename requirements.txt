@@ -1,6 +1,27 @@
-PyYAML>=6.0
-Pillow>=10.0.0
-matplotlib>=3.8.0
-piper-tts>=1.2.0
-pydub>=0.25.1
-edge-tts>=7.0
+# Versiones exactas: probadas el 2026-09-15 con Python 3.14 en Fedora 43 + RTX 4060 Ti.
+# Lockfile completo (todas las dependencias transitivas): requirements.lock.txt
+#   pip install -r requirements.lock.txt   # entorno idéntico
+#   pip install -r requirements.txt        # solo los paquetes directos, pineados
+
+PyYAML==6.0.3   # config
+pillow==11.3.0   # tarjetas
+matplotlib==3.11.2   # solo por la fuente DejaVu que trae
+numpy==2.5.3
+kokoro-onnx==0.4.7   # TTS principal (Kokoro-82M)
+onnxruntime-gpu==1.30.0   # Kokoro en GPU (CUDA 12)
+soundfile==0.14.0   # escribir el wav de Kokoro
+nvidia-cuda-runtime-cu12==12.9.79   # libs CUDA para onnxruntime-gpu
+nvidia-cublas-cu12==12.9.2.10
+nvidia-cudnn-cu12==9.26.0.51
+nvidia-cufft-cu12==11.4.1.4
+nvidia-curand-cu12==10.3.10.19
+edge-tts==7.2.8   # TTS de respaldo (cliente no oficial de Edge, endpoint cambiante)
+piper-tts==1.8.0   # TTS de respaldo offline
+
+# Etapas de ingesta, ranking y redaccion (agregadas el 2026-09-16)
+feedparser==6.0.14   # feeds rss y atom
+trafilatura==2.2.0   # texto completo de los articulos
+httpx==0.28.1   # cliente http con timeout y reintentos
+rapidfuzz==3.14.6   # similitud de titulos para agrupar
+selectolax==0.4.11   # scrapers de paginas sin rss
+pytest==9.1.1   # tests

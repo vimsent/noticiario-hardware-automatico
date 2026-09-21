@@ -4,7 +4,9 @@ __pycache__/
 
 # Artefactos generados por el pipeline
 output/*
+cache/
 assets/music/*
+!assets/music/licencias.yaml
 !output/.gitkeep
 
 # Modelos de voz (pesados, no van al repo)
@@ -13,3 +15,11 @@ models/*.onnx.json
 
 # Claves / secretos
 .env
+
+# Etapas de ingesta y redaccion
+data/noticias.db
+runs/*
+!runs/*/
+runs/*/*
+!runs/*/candidatas.md
+!runs/barrido_acumulado.md

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Atom de prueba</title>
+  <entry>
+    <title>AMD anuncia Zen 6</title>
+    <link href="https://ejemplo.org/amd-zen-6"/>
+    <id>urn:uuid:1</id>
+    <updated>2026-09-12T08:30:00-04:00</updated>
+    <content type="html">&lt;p&gt;Zen 6 llega en 2027.&lt;/p&gt;</content>
+  </entry>
+</feed>

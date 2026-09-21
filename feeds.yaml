@@ -1,0 +1,467 @@
+# Fuentes de la etapa 1. Campos: ver CLAUDE.md. Todas las urls fueron verificadas el 2026-09-20.
+#
+# filtro_tema: true  -> en el ranking, un articulo de esta fuente solo cuenta como es_chile
+#                       si ademas calza con ranking.keywords_tema_chile (evita que un medio
+#                       general chileno llene el cupo de Chile con noticias que no son de tecnologia).
+#
+# Sin rss (verificado): Diario Financiero, El Mostrador, Emol, CNN Chile, VideoCardz, Intel newsroom,
+# TSMC y ANID. Entran por consultas de google news con site:. ANID ademas devuelve 403 a nuestro
+# user agent hasta en robots.txt, asi que su scraper queda pendiente.
+
+# ---------------------------------------------------------------------------
+# hardware
+# ---------------------------------------------------------------------------
+- nombre: phoronix
+  medio: Phoronix
+  tipo: rss
+  url: https://www.phoronix.com/rss.php
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: techpowerup
+  medio: TechPowerUp
+  tipo: rss
+  url: https://www.techpowerup.com/rss/news
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: tomshardware
+  medio: Tom's Hardware
+  tipo: rss
+  url: https://www.tomshardware.com/feeds/all
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: theregister
+  medio: The Register
+  tipo: rss
+  url: https://www.theregister.com/headlines.atom
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: servethehome
+  medio: ServeTheHome
+  tipo: rss
+  url: https://www.servethehome.com/feed/
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: arstechnica
+  medio: Ars Technica
+  tipo: rss
+  url: https://feeds.arstechnica.com/arstechnica/technology-lab
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: notebookcheck
+  medio: Notebookcheck
+  tipo: rss
+  url: https://www.notebookcheck.net/News.152.100.html
+  categoria: hardware
+  idioma: en
+  texto_completo: false          # 500 items por feed; el resumen basta
+  activo: true
+
+- nombre: igorslab
+  medio: Igor's Lab
+  tipo: rss
+  url: https://www.igorslab.de/en/feed/
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: chipsandcheese
+  medio: Chips and Cheese
+  tipo: rss
+  url: https://chipsandcheese.com/feed
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: wccftech
+  medio: Wccftech
+  tipo: rss
+  url: https://wccftech.com/feed/
+  categoria: hardware
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: gn_videocardz              # videocardz.com/feed devuelve 403 a bots
+  medio: VideoCardz
+  tipo: google_news
+  consulta: site:videocardz.com
+  hl: en-US
+  gl: US
+  ceid: US:en
+  categoria: hardware
+  idioma: en
+  texto_completo: false
+  activo: true
+
+# ---------------------------------------------------------------------------
+# oficiales
+# ---------------------------------------------------------------------------
+- nombre: nvidia_news
+  medio: NVIDIA Newsroom
+  tipo: rss
+  url: https://nvidianews.nvidia.com/releases.xml
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: amd_ir
+  medio: AMD Newsroom
+  tipo: rss
+  url: https://ir.amd.com/rss/news-releases.xml
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: gn_intel_newsroom           # newsroom.intel.com no expone rss
+  medio: Intel Newsroom
+  tipo: google_news
+  consulta: Intel newsroom announces
+  hl: en-US
+  gl: US
+  ceid: US:en
+  categoria: oficial
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: qualcomm_ir
+  medio: Qualcomm Newsroom
+  tipo: rss
+  url: https://investor.qualcomm.com/rss/pressrelease.aspx
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: arm_news
+  medio: Arm Newsroom
+  tipo: rss
+  url: https://newsroom.arm.com/rss
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: gn_tsmc                     # pr.tsmc.com bloquea bots
+  medio: TSMC
+  tipo: google_news
+  consulta: site:pr.tsmc.com
+  hl: en-US
+  gl: US
+  ceid: US:en
+  categoria: oficial
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: samsung_news
+  medio: Samsung Newsroom
+  tipo: rss
+  url: https://news.samsung.com/global/feed
+  categoria: oficial
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: micron_ir
+  medio: Micron Newsroom
+  tipo: rss
+  url: https://investors.micron.com/rss/pressrelease.aspx
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: skhynix_news
+  medio: SK hynix Newsroom
+  tipo: rss
+  url: https://news.skhynix.com/feed/
+  categoria: oficial
+  idioma: en
+  texto_completo: true
+  activo: true
+
+# ---------------------------------------------------------------------------
+# general y negocios
+# ---------------------------------------------------------------------------
+- nombre: cnbc_tech
+  medio: CNBC
+  tipo: rss
+  url: https://www.cnbc.com/id/19854910/device/rss/rss.html
+  categoria: general
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: techcrunch_hardware
+  medio: TechCrunch
+  tipo: rss
+  url: https://techcrunch.com/category/hardware/feed/
+  categoria: general
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: theverge_tech
+  medio: The Verge
+  tipo: rss
+  url: https://www.theverge.com/rss/tech/index.xml
+  categoria: general
+  idioma: en
+  texto_completo: false
+  activo: true
+
+- nombre: bbc_tech
+  medio: BBC
+  tipo: rss
+  url: https://feeds.bbci.co.uk/news/technology/rss.xml
+  categoria: general
+  idioma: en
+  texto_completo: false
+  activo: true
+
+# ---------------------------------------------------------------------------
+# google news: una consulta por empresa de la lista de eventos mayores
+# ---------------------------------------------------------------------------
+- {nombre: gn_nvidia, medio: Google News, tipo: google_news, consulta: NVIDIA, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_amd, medio: Google News, tipo: google_news, consulta: 'AMD chips OR Ryzen OR Radeon OR "Lisa Su"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_intel, medio: Google News, tipo: google_news, consulta: Intel, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_tsmc_general, medio: Google News, tipo: google_news, consulta: TSMC, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_qualcomm, medio: Google News, tipo: google_news, consulta: Qualcomm, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_arm, medio: Google News, tipo: google_news, consulta: '"Arm Holdings"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_apple_silicon, medio: Google News, tipo: google_news, consulta: '"Apple silicon" OR "Apple chip" OR "Apple M5" OR "Apple M6"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_samsung, medio: Google News, tipo: google_news, consulta: '"Samsung Electronics" OR "Samsung Foundry"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_skhynix, medio: Google News, tipo: google_news, consulta: '"SK hynix"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_micron, medio: Google News, tipo: google_news, consulta: Micron memory, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_asml, medio: Google News, tipo: google_news, consulta: ASML, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_nvidia_es, medio: Google News, tipo: google_news, consulta: NVIDIA, hl: es-419, gl: CL, ceid: "CL:es-419", categoria: general, idioma: es, texto_completo: false, activo: true}
+
+# ---------------------------------------------------------------------------
+# chile: instituciones y universidades (rss propio, todo es relevante)
+# ---------------------------------------------------------------------------
+- nombre: subtel
+  medio: Subtel
+  tipo: rss
+  url: https://www.subtel.gob.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: usm_noticias
+  medio: USM
+  tipo: rss
+  url: https://usm.cl/noticias/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: informatica_usm
+  medio: Informatica USM
+  tipo: rss
+  url: https://informatica.usm.cl/noticias/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: informatica_usm_scraper     # respaldo del rss, misma pagina en html
+  medio: Informatica USM
+  tipo: scraper
+  scraper: usm_noticias
+  url: https://informatica.usm.cl/noticias/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: reuna
+  medio: REUNA
+  tipo: rss
+  url: https://www.reuna.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: gn_anid                     # anid.cl bloquea bots (403). Scraper pendiente.
+  medio: ANID
+  tipo: google_news
+  consulta: site:anid.cl concurso OR convocatoria OR beca
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  activo: true
+
+- nombre: gn_corfo
+  medio: Corfo
+  tipo: google_news
+  consulta: Corfo convocatoria OR programa tecnología
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  activo: true
+
+# ---------------------------------------------------------------------------
+# chile: medios (con filtro de tema)
+# ---------------------------------------------------------------------------
+- nombre: latercera_tecnologia
+  medio: La Tercera
+  tipo: rss
+  url: https://www.latercera.com/arc/outboundfeeds/rss/category/tecnologia/?outputType=xml
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: pisapapeles
+  medio: Pisapapeles
+  tipo: rss
+  url: https://pisapapeles.net/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: ciper
+  medio: CIPER
+  tipo: rss
+  url: https://www.ciperchile.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_latercera
+  medio: La Tercera
+  tipo: google_news
+  consulta: site:latercera.com (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_df
+  medio: Diario Financiero
+  tipo: google_news
+  consulta: site:df.cl (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_elmostrador
+  medio: El Mostrador
+  tipo: google_news
+  consulta: site:elmostrador.cl (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_emol
+  medio: Emol
+  tipo: google_news
+  consulta: site:emol.com (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_biobio
+  medio: BioBioChile
+  tipo: google_news
+  consulta: site:biobiochile.cl (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+- nombre: gn_cnnchile
+  medio: CNN Chile
+  tipo: google_news
+  consulta: site:cnnchile.com (tecnología OR "data center" OR semiconductores OR ciberseguridad OR Subtel OR chips OR "inteligencia artificial" OR software OR Nvidia OR Intel OR AMD OR startup OR fibra OR satelital)
+  hl: es-419
+  gl: CL
+  ceid: CL:es-419
+  categoria: chile
+  idioma: es
+  texto_completo: false
+  filtro_tema: true
+  activo: true
+
+# ---------------------------------------------------------------------------
+# chile: consultas tematicas (cualquier medio)
+# ---------------------------------------------------------------------------
+- {nombre: gn_chile_datacenter, medio: Google News, tipo: google_news, consulta: '"data center" Chile OR "centro de datos" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_ley_datos, medio: Google News, tipo: google_news, consulta: '"ley 21.719" OR "protección de datos personales" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_anci, medio: Google News, tipo: google_news, consulta: 'ANCI ciberseguridad OR "ley 21.663"', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_anid, medio: Google News, tipo: google_news, consulta: 'ANID concurso OR convocatoria OR beca', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_subtel, medio: Google News, tipo: google_news, consulta: 'Subtel', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_cable, medio: Google News, tipo: google_news, consulta: '"cable submarino" Chile OR "fibra óptica" Chile OR satelital Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_astronomia, medio: Google News, tipo: google_news, consulta: 'observatorio ALMA OR "Vera Rubin" OR ELT OR NLHPC Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_startup, medio: Google News, tipo: google_news, consulta: '"Startup Chile" OR hackathon Chile OR "ingeniería informática" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_usm, medio: Google News, tipo: google_news, consulta: 'site:usm.cl OR "Universidad Técnica Federico Santa María" informática', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+
+# ---------------------------------------------------------------------------
+# comunidad
+# ---------------------------------------------------------------------------
+- {nombre: r_hardware, medio: r/hardware, tipo: reddit, subreddit: hardware, periodo: week, limite: 100, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: r_amd, medio: r/Amd, tipo: reddit, subreddit: Amd, periodo: week, limite: 100, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: r_nvidia, medio: r/nvidia, tipo: reddit, subreddit: nvidia, periodo: week, limite: 100, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: r_intel, medio: r/intel, tipo: reddit, subreddit: intel, periodo: week, limite: 100, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: hn_nvidia, medio: Hacker News, tipo: hn, consulta: nvidia, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: hn_amd, medio: Hacker News, tipo: hn, consulta: amd, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: hn_intel, medio: Hacker News, tipo: hn, consulta: intel, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: hn_tsmc, medio: Hacker News, tipo: hn, consulta: tsmc, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+- {nombre: hn_gpu, medio: Hacker News, tipo: hn, consulta: gpu, limite: 100, min_puntos: 20, categoria: comunidad, idioma: en, texto_completo: false, activo: true}

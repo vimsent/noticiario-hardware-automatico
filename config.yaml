@@ -1,20 +1,38 @@
 # Configuración del pipeline Noticiario de Hardware
 
 tts:
-  engine: edge                  # edge (voz neuronal, necesita internet) | piper (offline) | elevenlabs (no implementado)
-  fallback_engine: piper        # si el motor principal falla (ej. sin internet), sigue con este
+  # Motor de voz. Cambia esta línea para comparar:
+  #   edge   → voz neuronal de Microsoft (es-CL-LorenzoNeural), necesita internet
+  #   kokoro → Kokoro-82M local en la GPU (em_alex / em_santa / ef_dora)
+  #   piper  → offline, más robótica
+  # El caché de audio es por motor: alternar entre dos no vuelve a sintetizar lo ya hecho.
+  # Para re-generar solo la voz y el video: python scripts/main.py --skip-visuals
+  engine: edge
+  fallback_engines: [piper]     # si el principal falla, se prueba cada uno en orden para el resto del guion
+  kokoro_model_path: "models/kokoro-v1.0.onnx"
+  kokoro_voices_path: "models/voices-v1.0.bin"
+  kokoro_voice: em_alex         # español: em_alex, em_santa (hombre), ef_dora (mujer)
+  kokoro_speed: 1.0             # 1.0 normal, 1.1 más rápido
+  kokoro_lang: es-419           # es-419 = latinoamericano (seseo); es = España
+  kokoro_device: auto           # auto | cuda | cpu
   edge_voice: es-CL-LorenzoNeural   # es-CL-CatalinaNeural (mujer), es-MX-JorgeNeural, es-AR-TomasNeural...
   edge_rate: "+5%"              # velocidad: "+0%" normal, "+10%" más rápido, "-10%" más lento
   edge_pitch: "+0Hz"
   piper_model_path: "models/es_ES-davefx-medium.onnx"
-  piper_speed: 2.5               # 1.0 = normal, <1 más lento, >1 más rápido
+  piper_speed: 3.5               # 1.0 = normal, <1 más lento, >1 más rápido
   piper_sentence_silence: 0.25   # pausa (s) entre oraciones
+  cache_dir: "cache/audio"       # audio por bloque (hash de texto+voz): no se vuelve a sintetizar lo que no cambió
   elevenlabs_api_key_env: "ELEVENLABS_API_KEY"   # nombre de la variable de entorno
   elevenlabs_voice_id: ""
 
 music:
   folder_path: "assets/music"    # elige un mp3 al azar de esta carpeta en cada corrida
-  volume_db: -22                 # cuánto se baja la música respecto a la voz
+  volume_db: -14                 # nivel de la música cuando NO hay voz (con ducking) o siempre (sin ducking)
+  ducking: true                  # comprimir la música automáticamente mientras habla la voz (sidechain)
+  duck_threshold: 0.05           # nivel de voz a partir del cual se baja la música (0-1)
+  duck_ratio: 8                  # cuánto se baja: 8 = fuerte, 3 = suave
+  duck_attack_ms: 20
+  duck_release_ms: 400           # cuánto tarda en volver a subir cuando la voz calla
   fade_in_sec: 2
   fade_out_sec: 3
   seed: null                      # fija un número (ej. 42) para repetir siempre la misma elección
@@ -26,22 +44,318 @@ visuals:
   placeholder_bg_color: "#111319"
   placeholder_text_color: "#F5F5F5"
   accent_color: "#4F8CFF"        # color de la etiqueta (NOTICIA 1...) y la barra lateral
-  ken_burns: true                # efecto de zoom lento sobre las imágenes fijas
+  ken_burns: false                # efecto de zoom lento sobre las imágenes fijas
   ken_burns_zoom: 1.08
+  strict_assets: false           # true = abortar si el guion pide [IMAGEN]/[DIAGRAMA]/[GRÁFICO] y no hay archivo
+  mermaid_cmd: "mmdc"            # CLI de Mermaid para [DIAGRAMA] con código mermaid (npm i -g @mermaid-js/mermaid-cli)
+  mermaid_theme: "dark"
 
 video:
-  resolution: [1920, 1080]
-  fps: 30
+  resolution: [1280, 720]
+  fps: 2
   output_path: "output/video_final.mp4"
   encoder: auto                  # auto | nvenc (GPU NVIDIA) | libx264 (CPU)
   parallel_jobs: 4               # bloques renderizados a la vez (NVENC en GeForce permite ~8 sesiones)
 
 output:
-  clean_intermediates: true      # borrar bloques.json, audio/, visuals/ y manifests al terminar (queda solo el video y fuentes.md)
+  clean_intermediates: false     # true = borrar bloques.json, audio/, visuals/ y manifests al terminar.
+                                 # Déjalo en false para poder iterar con --skip-audio / --only-assemble.
 
 subtitles:
   enabled: false                  # TODO: implementar con Whisper (ver README)
 
 parsing:
   auto_segment_target_words: 130   # solo se usa si el guion NO trae etiquetas [TAG]
-  max_block_words: 220             # con etiquetas: un bloque más largo se parte en sub-bloques (misma imagen/titular, otro extracto)
+  max_block_words: 220             # red de seguridad: un bloque más largo se parte en sub-bloques (mismo visual, otro extracto)
+  pause_sec: 0.8                   # silencio que agrega cada [PAUSA] del guion
+
+# ---------------------------------------------------------------------------
+# Etapas previas al video: ingesta, ranking y redaccion (ver CLAUDE.md)
+# ---------------------------------------------------------------------------
+
+ingesta:
+  feeds_path: feeds.yaml
+  db_path: data/noticias.db
+  user_agent: "noticiario-hardware/0.1 (+https://github.com/vimsent/noticiario-hardware-automatico)"
+  timeout_s: 20
+  reintentos: 2
+  req_por_seg_por_host: 1
+  # hosts que necesitan mas espacio entre requests (segundos); reddit devuelve 429 con 1/s
+  intervalo_por_host:
+    www.reddit.com: 8
+  dias_rezagadas: 7
+  zona_horaria: America/Santiago
+  google_news_url: https://news.google.com/rss/search
+  reddit:
+    # rss: anonimo, funciona sin credenciales pero no trae puntaje.
+    # oauth: app-only (client_credentials), trae puntaje. Requiere crear una app en
+    # https://www.reddit.com/prefs/apps y exportar REDDIT_CLIENT_ID y REDDIT_CLIENT_SECRET.
+    metodo: rss
+    rss_url: "https://www.reddit.com/r/{subreddit}/top/.rss?t={periodo}&limit={limite}"
+    oauth_token_url: https://www.reddit.com/api/v1/access_token
+    oauth_api_url: "https://oauth.reddit.com/r/{subreddit}/top?t={periodo}&limit={limite}"
+    client_id_env: REDDIT_CLIENT_ID
+    client_secret_env: REDDIT_CLIENT_SECRET
+  hn:
+    url: https://hn.algolia.com/api/v1/search
+    item_url: "https://news.ycombinator.com/item?id={id}"
+  texto_completo:
+    max_por_run: 300
+    min_chars: 300
+
+apoyo:
+  dolar_url: https://mindicador.cl/api
+  precios:
+    activo: false          # solotodo, fase posterior
+
+ranking:
+  leakers_path: data/leakers.md
+  salida_dir: runs
+  umbral_titulo: 70
+  ventana_agrupacion_dias: 4
+  # palabras que no cuentan al comparar titulos (sin tildes)
+  stopwords: [a, al, ante, con, contra, de, del, desde, e, el, en, entre, es, hacia, hasta, la, las, lo, los, mas, o, para, por, que, se, segun, sin, sobre, su, sus, tras, u, un, una, unas, unos, y, ya,
+              the, a, an, and, or, of, for, to, in, on, at, by, with, from, as, is, are, be, its, it, this, that, into, over, after, before, about, up, out, new, now, here, why, how, what, says, said]
+  embeddings: false            # reservado: agrupacion multilingue, no implementado
+  max_grupos: 50
+  max_grupos_chile: 35
+  max_articulos_con_texto: 3
+  max_chars_texto: 6000
+  # bloque_chile: bono para grupos es_chile que calzan con keywords_bloque_chile (los temas del
+  # bloque Chile del prompt). No esta en la formula original de CLAUDE.md; con 0 se desactiva.
+  pesos: {medios: 3, comunidad: 2, evento_mayor: 4, oficial: 1, rumor: -1, bloque_chile: 2}
+  prioridad_medios: [oficial, hardware, general, chile, comunidad]
+  # Las keywords se comparan en minusculas y sin tildes sobre titulo y resumen.
+  empresas:
+    NVIDIA: [nvidia, geforce, jensen huang]
+    AMD: [amd, radeon, ryzen, epyc, lisa su]
+    Intel: [intel, xeon, arc battlemage, lip-bu tan]
+    TSMC: [tsmc, taiwan semiconductor]
+    Qualcomm: [qualcomm, snapdragon]
+    ARM: [arm holdings, arm ltd, arm]
+    Apple: [apple, m5, m6]
+    Samsung: [samsung, samsung foundry]
+    SK Hynix: [sk hynix, hynix]
+    Micron: [micron]
+    ASML: [asml]
+  categorias:
+    chile: [chile, chileno, chilena, chilenos, santiago, subtel, anid, anci, valparaiso, sercotec, corfo]
+    fabricacion: [fab, fabs, foundry, wafer, oblea, node, nodo, nm, angstrom, euv, high-na, litografia, lithography, packaging, cowos, yield, rendimiento de oblea]
+    memoria: [dram, ddr4, ddr5, ddr6, hbm, hbm3, hbm4, nand, ssd, memoria, memory, gddr7, gddr6, lpddr]
+    datacenter: [data center, datacenter, datacenters, centro de datos, hyperscaler, hyperscalers, ai accelerator, blackwell, rubin, mi300, mi350, mi400, instinct, epyc, xeon, server, servidor, servidores, rack, dgx, hgx]
+    gpu: [gpu, gpus, graphics card, tarjeta grafica, radeon, geforce, rtx, rdna, udna, arc, battlemage, celestial, dlss, fsr, xess, ray tracing]
+    cpu: [cpu, cpus, processor, procesador, procesadores, ryzen, core ultra, zen 5, zen 6, zen 7, panther lake, nova lake, arrow lake, x3d, threadripper, apu, snapdragon x]
+    software: [linux, kernel, driver, drivers, windows, firmware, bios, microcode, mesa, vulkan, directx, cuda, rocm, opencl, compiler, compilador]
+    rumores: [leak, leaked, leaks, rumor, rumour, rumored, rumoured, reportedly, filtracion, filtraciones, supuestamente]
+    industria: []
+  keywords_evento_mayor:
+    - acquisition
+    - acquires
+    - acquire
+    - to acquire
+    - acquired
+    - buyout
+    - takeover
+    - merger
+    - merge with
+    - bankruptcy
+    - chapter 11
+    - insolvency
+    - new ceo
+    - names ceo
+    - ceo steps down
+    - ceo resigns
+    - ceo to step down
+    - ousted
+    - layoffs
+    - lays off
+    - laying off
+    - job cuts
+    - cuts jobs
+    - export controls
+    - export control
+    - export ban
+    - export restrictions
+    - lawsuit
+    - sues
+    - sued
+    - antitrust
+    - class action
+    - quarterly results
+    - quarterly earnings
+    - earnings report
+    - earnings call
+    - q1 results
+    - q2 results
+    - q3 results
+    - q4 results
+    - q1 earnings
+    - q2 earnings
+    - q3 earnings
+    - q4 earnings
+    - fiscal quarter
+    - adquisicion
+    - adquiere
+    - compra de
+    - fusion
+    - quiebra
+    - nuevo ceo
+    - renuncia el ceo
+    - despidos
+    - control de exportaciones
+    - restricciones de exportacion
+    - demanda judicial
+    - demanda a
+    - resultados trimestrales
+    - resultados del trimestre
+  keywords_rumor:
+    - leak
+    - leaked
+    - leaks
+    - rumor
+    - rumour
+    - rumored
+    - rumoured
+    - rumors
+    - reportedly
+    - allegedly
+    - sources say
+    - according to sources
+    - filtracion
+    - filtraciones
+    - filtrado
+    - supuestamente
+    - trascendio
+  keywords_chile: [chile, chileno, chilena, chilenos, chilenas]
+  # Temas del bloque Chile del prompt: suman pesos.bloque_chile y exportan tema_chile: 1.
+  keywords_bloque_chile:
+    - data center
+    - datacenter
+    - datacenters
+    - centro de datos
+    - centros de datos
+    - subtel
+    - fibra optica
+    - cable submarino
+    - satelital
+    - 5g
+    - ley 21.719
+    - ley 21.663
+    - proteccion de datos
+    - datos personales
+    - anci
+    - ciberseguridad
+    - anid
+    - corfo
+    - startup chile
+    - beca
+    - becas
+    - concurso
+    - convocatoria
+    - alma
+    - vera rubin
+    - elt
+    - nlhpc
+    - supercomputador
+    - usm
+    - santa maria
+    - universidad
+    - hackathon
+    - ingenieria informatica
+    - ingenieria civil informatica
+    - practica profesional
+    - semiconductores
+    - chips
+  # Un articulo de un medio chileno general (feeds con filtro_tema: true) o una mencion suelta
+  # de chile solo cuenta como es_chile si menciona una empresa de la lista o uno de estos temas.
+  keywords_tema_chile:
+    - data center
+    - datacenter
+    - datacenters
+    - centro de datos
+    - centros de datos
+    - semiconductor
+    - semiconductores
+    - chip
+    - chips
+    - procesador
+    - procesadores
+    - tarjeta grafica
+    - tarjeta de video
+    - computador
+    - computadores
+    - computacion
+    - supercomputador
+    - supercomputadora
+    - hardware
+    - software
+    - ciberseguridad
+    - ciberataque
+    - anci
+    - ley 21.719
+    - ley 21.663
+    - datos personales
+    - subtel
+    - fibra optica
+    - cable submarino
+    - satelital
+    - 5g
+    - inteligencia artificial
+    - anid
+    - corfo
+    - startup chile
+    - beca
+    - becas
+    - concurso
+    - convocatoria
+    - hackathon
+    - alma
+    - vera rubin
+    - elt
+    - nlhpc
+    - observatorio
+    - usm
+    - santa maria
+    - informatica
+    - ingenieria
+    - programadores
+    - desarrolladores
+    - videojuegos
+    - nvidia
+    - intel
+    - amd
+
+redaccion:
+  prompt_path: prompts/redaccion.md
+  claude_bin: claude
+  # Flags verificados con claude 2.1.274 (claude --help). El prompt entra por stdin.
+  #   --tools            limita el set disponible (sin Bash)
+  #   --allowedTools     pre-aprueba esas herramientas para que no pidan permiso
+  #   --permission-prompts none   lo que igual pediria permiso se niega en vez de colgar
+  claude_args:
+    - -p
+    - --tools
+    - "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+    - --allowedTools
+    - "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
+    - --permission-mode
+    - acceptEdits
+    - --permission-prompts
+    - none
+    - --output-format
+    - stream-json                # un evento json por linea: el log se escribe en vivo
+    - --verbose                  # requerido por stream-json en modo -p
+    - --no-session-persistence
+    - --strict-mcp-config
+  timeout_min: 30
+  palabras_min: 1800
+  palabras_max: 3000              # fuera de rango es advertencia, no error
+  palabras_prohibidas: [revolucionario, "cambia las reglas del juego", "un antes y un despues", "el presente analisis"]
+  noticias_secundarias_min: 4     # [NOTICIA 2..] ademas de la principal
+  noticias_secundarias_max: 6
+  titular_max_palabras: 14
+  columnas_candidatas: [hecho, fecha, cobertura, estatus, hilo, clasificacion, puntaje, decision, motivo]
+  # true: el barrido de seguridad tambien cubre los temas del bloque Chile (data centers, subtel,
+  # leyes 21.719 y 21.663, anid, astronomia, usm). Lo que encuentre va a barrido.json marcado BARRIDO.
+  # Es una red de seguridad mientras crece la cobertura de feeds.yaml; apagado = cero busquedas de Chile.
+  barrido_chile: false
