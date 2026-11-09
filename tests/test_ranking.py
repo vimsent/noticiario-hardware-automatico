@@ -206,3 +206,28 @@ def test_bono_bloque_chile(cfg, leakers):
     assert g1["tema_chile"] == 0 and g2["tema_chile"] == 1
     assert g2["score_prelim"] == g1["score_prelim"] + 2
     assert score_prelim(1, 0, False, False, False, {"bloque_chile": 0}, True) == 3.0
+
+
+def test_tema_prioritario_marca_y_bono(cfg, leakers):
+    et = Etiquetador(cfg["ranking"], leakers)
+    rk = dict(cfg["ranking"], pesos={**cfg["ranking"]["pesos"], "tema_prioritario": 3})
+    normal = art(1, "Nuevo mouse gamer con sensor de 30000 dpi")
+    euv = art(2, "Samsung usara High-NA EUV para DRAM desde 2028")
+    alternativa = art(3, "Startup demuestra litografia con laser de electrones libres")
+    china = art(4, "SMEE muestra prototipo de escaner para chips avanzados")
+    g = [construir_grupo(Grupo(articulos=[a]), et, rk, DESDE, MEDIOS) for a in (normal, euv, alternativa, china)]
+    assert [x["tema_prioritario"] for x in g] == [0, 1, 1, 1]
+    assert g[1]["score_prelim"] == g[0]["score_prelim"] + 3
+    assert score_prelim(1, 0, False, False, False, {"tema_prioritario": 3}, False, True) == 6.0
+
+
+def test_seleccionar_cupo_prioritarios():
+    def g(clave, score, prio=0):
+        return {"clave": clave, "score_prelim": score, "n_medios": 1, "evento_mayor": 0, "es_chile": 0,
+                "tema_prioritario": prio, "fecha_hecho": "2026-09-10"}
+    grupos = [g("a", 9.0), g("b", 8.0), g("c", 7.0), g("p1", 0.5, prio=1), g("p2", 0.4, prio=1), g("p3", 0.3, prio=1)]
+    sel = exportar.seleccionar(grupos, max_grupos=2, max_grupos_chile=0, max_grupos_prioritarios=2)
+    assert [x["clave"] for x in sel] == ["a", "b", "p1", "p2"]
+    # sin cupo, los prioritarios de bajo puntaje quedan fuera como antes
+    sel = exportar.seleccionar(grupos, max_grupos=2, max_grupos_chile=0)
+    assert [x["clave"] for x in sel] == ["a", "b"]

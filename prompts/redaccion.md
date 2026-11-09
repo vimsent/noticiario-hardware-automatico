@@ -81,7 +81,7 @@ Un hallazgo del barrido que cumpla las reglas de selección puede entrar al guio
 
 ### Fase 2: lista de candidatas
 
-Cada grupo de `candidatas.json` es una candidata, más lo que haya aportado el barrido de seguridad. Los campos que trae el archivo (`fecha_hecho`, `n_medios`, `medios`, `categoria`, `empresas`, `evento_mayor`, `es_rumor`, `leakers`, `es_chile`, `rezagada`, `score_prelim`) son una estimación hecha por código: verifícalos contra los artículos y corrígelos si corresponde. Para cada candidata registra:
+Cada grupo de `candidatas.json` es una candidata, más lo que haya aportado el barrido de seguridad. Los campos que trae el archivo (`fecha_hecho`, `n_medios`, `medios`, `categoria`, `empresas`, `evento_mayor`, `es_rumor`, `leakers`, `es_chile`, `tema_prioritario`, `rezagada`, `score_prelim`) son una estimación hecha por código: verifícalos contra los artículos y corrígelos si corresponde. Para cada candidata registra:
 
 - **Hecho**, en una línea.
 - **Fecha del hecho**, que no es la fecha del artículo. Un artículo de esta semana que recapitula algo de marzo tiene fecha de hecho en marzo.
@@ -118,6 +118,7 @@ Puntaje total de 0 a 12.
 4. **Filtro de rumores.** Aplica la sección "Filtraciones y reputación de leakers". Un rumor que no pasa ese filtro queda DESCARTADO, sin importar su puntaje.
 5. **Umbral mínimo.** Ninguna secundaria entra con menos de 5 puntos. Si no alcanzan cuatro secundarias sobre el umbral, el episodio es más corto.
 6. **Bloque Chile.** Se selecciona aparte, con la misma lógica de historial. Una ley que "sigue en trámite" sin novedad fechada es REPETIDA.
+7. **Temas prioritarios.** Aplica la sección "Temas prioritarios": +1 punto y, si hace falta, una excepción a la regla de una noticia por categoría.
 
 ### Fase 4: escribir
 
@@ -137,6 +138,25 @@ No produzcas un informe de investigación: el entregable es un guion hablado.
 **Nunca cites** como fuente una página de etiquetas, un índice o una portada. Cita el artículo específico.
 
 Si una nota viene de un agregador de baja calidad, dilo en el guion. Las filtraciones van siempre etiquetadas como rumor, con el nombre del leaker original.
+
+## TEMAS PRIORITARIOS
+
+Estos temas le interesan especialmente al canal y a su audiencia. No se inventan noticias para cubrirlos: solo cuentan cuando hay un hecho fechado dentro de la ventana (o una rezagada válida).
+
+- **EUV y litografía avanzada.** ASML, máquinas EUV y High-NA EUV, su adopción por TSMC, Samsung, Intel y los fabricantes de memoria, costos por máquina, capacidad de producción y calendarios.
+- **Alternativas a la EUV.** Litografía de rayos X, fuentes basadas en láser de electrones libres (FEL), litografía por haz de átomos o de electrones, y cualquier otra propuesta para reemplazar o complementar la EUV. Casi todo esto es investigación o startups: di siempre si es simulación, demostración de laboratorio, prototipo o producción.
+- **El progreso de China en EUV y litografía propia.** Fabricantes locales de equipos, prototipos, controles de exportación y cómo los esquivan. Separa lo confirmado de lo reportado sin documentos y de lo que suena a propaganda, y dilo en el guion.
+- **Impacto en DRAM, HBM y NAND.** Qué nodos y generaciones de memoria dependen de EUV, cuándo la adopta cada fabricante de memoria, y qué cambia en capacidad y precios.
+
+En `candidatas.json`, los grupos con `tema_prioritario: 1` son los que el código detectó por palabras clave. Es una estimación: verifícala contra los artículos (puede haber falsos positivos, y un grupo sin la marca puede igual ser de estos temas).
+
+Cómo pesan en la selección:
+
+1. Una candidata NUEVA o DESARROLLO de un tema prioritario suma **+1 punto** a la rúbrica, con tope de 12.
+2. Si queda fuera solo porque su categoría (normalmente fabricación o memoria) ya está ocupada, puede entrar igual aunque repita categoría, siempre que pase el umbral de 5 puntos y sin pasar del máximo de secundarias de CANTIDAD DE NOTICIAS (si ya están todas ocupadas, reemplaza a la de menor puntaje). Máximo una por episodio por esta vía.
+3. Si en la ventana no hay ningún hecho de estos temas, no fuerces nada y no los menciones.
+4. En `candidatas.md`, escribe `PRIORITARIO` al principio de la columna Motivo de estas candidatas.
+5. Al contarlos, aplica la regla de estilo con más razón que nunca: explica cómo funciona la tecnología antes de opinar (por qué High-NA puede imprimir en una sola exposición lo que la EUV normal hace en varias, qué es un láser de electrones libres, por qué la HBM se come más oblea que la DDR5).
 
 ## FILTRACIONES Y REPUTACIÓN DE LEAKERS
 

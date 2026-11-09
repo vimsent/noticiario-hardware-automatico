@@ -1,12 +1,29 @@
 # Noticiario de Hardware — Pipeline de generación de video
 
-Convierte un guion de texto (la respuesta de Claude al prompt
-`~/Descargas/prompt_noticiario_hardware_final.md`, pegada en `input/guion.md`) en
-un video con narración por voz neuronal (edge-tts o Kokoro en la GPU, a elección),
-música de fondo con ducking y tarjetas de titular por bloque, más capítulos de
-YouTube listos.
+Convierte un guion de texto en un video con narración por voz neuronal (edge-tts
+o Kokoro en la GPU, a elección), música de fondo con ducking y tarjetas de titular
+por bloque, más capítulos de YouTube listos.
 
-## Flujo del pipeline
+## Pipeline completo (`start.py`)
+
+```bash
+python start.py --desde 2026-09-19 --hasta 2026-09-25
+```
+
+Corre las 5 etapas en orden — ingesta de fuentes, ranking, redacción con Claude
+Code, una pausa de revisión (Enter para seguir, `q` para abortar; se salta con
+`--sin-revision`) y el video de más abajo — y escribe `input/guion.md` solo. Sin
+fechas usa la última semana completa; sin `--episodio` sigue la numeración de
+`data/historial.md`. `--etapas 1,2` corre solo un subconjunto (en orden, sin
+importar cómo se listen); `--commit` deja un commit con `historial.md`,
+`leakers.md` y `candidatas.md` al final. Log completo en `runs/<fecha>/start.log`.
+Detalle de las etapas 1-4 (ingesta, ranking, redacción, formato del guion que
+espera el validador) en `CLAUDE.md`.
+
+Este README de acá para abajo documenta solo la etapa 5, el armado del video, que
+también funciona sola con un guion pegado a mano en `input/guion.md`.
+
+## Flujo del pipeline (etapa 5, armado del video)
 
 ```
 guion.md  →  parse_script.py  →  bloques.json  (+ fuentes.md, la sección FUENTES separada)

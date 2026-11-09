@@ -23,3 +23,7 @@ runs/*
 runs/*/*
 !runs/*/candidatas.md
 !runs/barrido_acumulado.md
+
+# Comparaciones pipeline vs. claude.ai manual (ver COMPARACION_METODOS.md):
+# se versionan los guiones y la libreta de resultados, no el video/audio pesado
+comparaciones/*/*/output/

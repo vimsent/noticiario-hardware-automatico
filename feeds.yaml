@@ -92,6 +92,24 @@
   texto_completo: true
   activo: true
 
+- nombre: semianalysis     # fabricacion y litografia a fondo; parte del contenido es de pago (texto_ok = 0 en esos)
+  medio: SemiAnalysis
+  tipo: rss
+  url: https://semianalysis.com/feed/
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
+- nombre: semiengineering     # Semiconductor Engineering: proceso, litografia, memoria
+  medio: Semiconductor Engineering
+  tipo: rss
+  url: https://semiengineering.com/feed/
+  categoria: hardware
+  idioma: en
+  texto_completo: true
+  activo: true
+
 - nombre: wccftech
   medio: Wccftech
   tipo: rss
@@ -256,6 +274,13 @@
 - {nombre: gn_skhynix, medio: Google News, tipo: google_news, consulta: '"SK hynix"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
 - {nombre: gn_micron, medio: Google News, tipo: google_news, consulta: Micron memory, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
 - {nombre: gn_asml, medio: Google News, tipo: google_news, consulta: ASML, hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+
+# temas prioritarios: EUV, litografia avanzada, alternativas, China, impacto en memoria
+- {nombre: gn_euv_highna, medio: Google News, tipo: google_news, consulta: '"High-NA" OR "EUV lithography" OR "EUV scanner"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_litografia_alternativas, medio: Google News, tipo: google_news, consulta: '"X-ray lithography" OR "free electron laser" lithography OR "electron beam lithography" OR xLight OR "atom beam" lithography OR nanoimprint lithography', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_china_euv, medio: Google News, tipo: google_news, consulta: 'China EUV lithography OR SMEE lithography OR SiCarrier OR "Huawei EUV"', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_euv_memoria, medio: Google News, tipo: google_news, consulta: 'EUV DRAM OR "EUV HBM" OR "High-NA" DRAM OR "EUV NAND" OR "EUV layers" memory', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_euv_es, medio: Google News, tipo: google_news, consulta: '"litografía EUV" OR "High-NA" OR "ultravioleta extremo" ASML', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: general, idioma: es, texto_completo: false, activo: true}
 - {nombre: gn_nvidia_es, medio: Google News, tipo: google_news, consulta: NVIDIA, hl: es-419, gl: CL, ceid: "CL:es-419", categoria: general, idioma: es, texto_completo: false, activo: true}
 
 # ---------------------------------------------------------------------------
@@ -298,6 +323,34 @@
   texto_completo: true
   activo: true
 
+- nombre: radio_uchile     # Diario y Radio Universidad de Chile: prensa oficial de la U. de Chile, tiene rss real
+  medio: Universidad de Chile
+  tipo: rss
+  url: https://radio.uchile.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: fcfm_uchile_scraper     # ingenieria.uchile.cl/noticias, sin rss; cubre tambien noticias del dcc
+  medio: FCFM Universidad de Chile
+  tipo: scraper
+  scraper: fcfm_uchile_noticias
+  url: https://ingenieria.uchile.cl/noticias
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: ing_uc     # Facultad de Ingenieria UC (incluye al dcc uc), sin feed propio de dcc pero este cubre
+  medio: Ingenieria UC
+  tipo: rss
+  url: https://www.ing.uc.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
 - nombre: reuna
   medio: REUNA
   tipo: rss
@@ -307,7 +360,17 @@
   texto_completo: true
   activo: true
 
-- nombre: gn_anid                     # anid.cl bloquea bots (403). Scraper pendiente.
+- nombre: anid_rss     # anid.cl bloqueaba con 403 cualquier UA sin prefijo "Mozilla/5.0" (regla de su cloudfront);
+                       # arreglado en ingesta.user_agent (config.yaml), no era intermitencia
+  medio: ANID
+  tipo: rss
+  url: https://anid.cl/feed/
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
+- nombre: gn_anid                     # respaldo: cobertura de terceros sobre anid.cl que el feed propio no trae
   medio: ANID
   tipo: google_news
   consulta: site:anid.cl concurso OR convocatoria OR beca
@@ -414,6 +477,15 @@
   filtro_tema: true
   activo: true
 
+- nombre: biobiochile_rss     # feed propio via feedburner (biobiochile no publica /feed en su dominio)
+  medio: BioBioChile
+  tipo: rss
+  url: https://feeds.feedburner.com/radiobiobio/NNeJ
+  categoria: chile
+  idioma: es
+  texto_completo: true
+  activo: true
+
 - nombre: gn_biobio
   medio: BioBioChile
   tipo: google_news
@@ -452,6 +524,18 @@
 - {nombre: gn_chile_astronomia, medio: Google News, tipo: google_news, consulta: 'observatorio ALMA OR "Vera Rubin" OR ELT OR NLHPC Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
 - {nombre: gn_chile_startup, medio: Google News, tipo: google_news, consulta: '"Startup Chile" OR hackathon Chile OR "ingeniería informática" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
 - {nombre: gn_chile_usm, medio: Google News, tipo: google_news, consulta: 'site:usm.cl OR "Universidad Técnica Federico Santa María" informática', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_uchile, medio: Google News, tipo: google_news, consulta: 'site:uchile.cl OR "Universidad de Chile" (informática OR "ciencias de la computación" OR DCC OR FCFM)', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_uc, medio: Google News, tipo: google_news, consulta: 'site:uc.cl OR "Pontificia Universidad Católica" (informática OR "ciencia de la computación" OR ingeniería)', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_usach, medio: Google News, tipo: google_news, consulta: 'site:usach.cl OR "Universidad de Santiago" ingeniería informática', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_udec, medio: Google News, tipo: google_news, consulta: 'site:udec.cl OR "Universidad de Concepción" ingeniería informática', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+
+# CMF, Ministerio de Ciencia, Pulso, DF, El Mostrador, Emol y Corfo no tienen rss propio verificable
+# (probado 2026-09-25: sin autodiscovery, /feed devuelve 404, o el listado real no es una pagina rastreable
+# con selectolax sin JS). El Mostrador/DF/Emol ademas mezclan demasiada noticia no-tech en su portada como
+# para justificar un scraper dedicado. Quedan cubiertos solo por estas consultas de Google News.
+- {nombre: gn_chile_cmf, medio: Google News, tipo: google_news, consulta: 'CMF Chile (ciberseguridad OR fintech OR datos)', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_chile_minciencia, medio: Google News, tipo: google_news, consulta: '"Ministerio de Ciencia" Chile (tecnología OR IA OR datos OR ciberseguridad)', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_pulso, medio: Google News, tipo: google_news, consulta: 'site:latercera.com/pulso (tecnología OR semiconductores OR "data center")', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
 
 # ---------------------------------------------------------------------------
 # comunidad

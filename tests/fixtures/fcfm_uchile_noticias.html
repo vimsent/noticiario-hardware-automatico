@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!-- En base.ftl - Solo para modo edición -->
+<html xml:lang="es" lang="es" class="no-js">
+<!-- cms:page content="website:/Ingenieria/noticias" dialog="standard-templating-kit:pages/metadatos/metaPagina" -->
+<!-- /cms:page -->
+<head>
+    <meta charset="UTF-8">
+      <meta name="twitter:url" content="https://ingenieria.uchile.cl/noticias">
+
+      <title>Noticias Ingeniería - Facultad de Ciencias Físicas y Matemáticas - Universidad de Chile</title>
+      <meta name="twitter:title" content="Noticias Ingeniería - Facultad de Ciencias Físicas y Matemáticas - Universidad de Chile">
+
+
+          <meta name="description" content="Novedades sobre programas de estudio, eventos y actividades académicas de La Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile ">
+          <meta name="twitter:description" content="Novedades sobre programas de estudio, eventos y actividades académicas de La Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile ">
+
+      <meta property="og:image" content="https://ingenieria.uchile.cl/dam/jcr:c1a4aeaa-67ca-4823-a1f4-e94a499d49ef/imagen-representativa-fcfm.jpg">
+      <meta name="twitter:image" content="https://ingenieria.uchile.cl/dam/jcr:c1a4aeaa-67ca-4823-a1f4-e94a499d49ef/imagen-representativa-fcfm.jpg"> 
+
+      <meta name="twitter:site" content="@uchile_beauchef">
+    <meta name="twitter:card" content="summary">
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FRNDGQSWET"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FRNDGQSWET');
+</script>
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="apple-mobile-web-app-title" content="Facultad de Ciencias Físicas y Matemáticas - Universidad de Chile">
+<meta name="application-name" content="Facultad de Ciencias Físicas y Matemáticas - Universidad de Chile">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/.resources/portal-uchile/mstile-150x150.png">
+<meta name="theme-color" content="#004b93">
+
+<link rel="icon" href="/.resources/portal-uchile/favicon.ico" sizes="32x32">
+<link rel="icon" href="/.resources/portal-uchile/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/.resources/portal-uchile/favicon/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/.resources/portal-uchile/styles/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/.resources/portal-ingenieria/styles/main103.css">
+
+    <link rel="stylesheet" type="text/css" href="/.resources/uchile-recursos/addthis.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/.resources/uchile-recursos/no-editor.css" media="screen">
+</head>
+<body>
+<header>
+	<!-- Barra UCHILE -->
+	<div class="uchile__header">
+		<div class="uchile__container">
+			<div class="uchile__left">
+				<a href="https://uchile.cl/" target="_blank" rel="noopener noreferrer" title="Universidad de Chile"><img src="/.resources/logos/barra-uchile.png" alt="Universidad de Chile"></a>
+			</div>
+			<a href="#;" title="Abrir buscador" class="uchile__open-search"><span class="ln-1"></span><span class="ln-2"></span><span class="ln-3"></span></a>
+			<div class="uchile__search">
+				<p>Buscador</p>
+				<script async src="https://cse.google.com/cse.js?cx=015318462511296752778:c-vhhombi-s"></script>
+				<div class="gcse-searchbox-only"></div>
+			</div>
+			<div class="uchile__right">
+				<a href="#;" title="Otras facultades" class="uchile__dropdown__btn">Facultades</a>
+				<ul class="uchile__dropdown__links">
+					<li><a href="https://fau.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Arquitectura y Urbanismo">Arquitectura y Urbanismo</a></li>
+					<li><a href="https://artes.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Artes">Artes</a></li>
+					<li><a href="https://ciencias.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias">Ciencias</a></li>
+					<li><a href="https://agronomia.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Agronómicas">Cs. Agronómicas</a></li>
+					<li><a href="https://ingenieria.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Físicas y Matemáticas">Cs. Físicas y Matemáticas</a></li>
+					<li><a href="https://forestal.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Forestales y de la Conservación de la Naturaleza">Cs. Forestales y Conservación</a></li>
+					<li><a href="https://quimica.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Químicas y Farmacéuticas">Cs. Químicas y Farmacéuticas</a></li>
+					<li><a href="https://facso.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Sociales">Cs. Sociales</a></li>
+					<li><a href="https://veterinaria.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Ciencias Veterinarias y Pecuarias">Cs. Veterinarias y Pecuarias</a></li>
+					<li><a href="https://fcei.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Comunicación e Imagen">Comunicación e Imagen</a></li>
+					<li><a href="https://derecho.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Derecho">Derecho</a></li>
+					<li><a href="https://fen.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Economía y Negocios">Economía y Negocios</a></li>
+					<li><a href="https://filosofia.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Filosofía y Humanidades">Filosofía y Humanidades</a></li>
+					<li><a href="https://gobierno.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Gobierno">Gobierno</a></li>
+					<li><a href="https://medicina.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Medicina">Medicina</a></li>
+					<li><a href="https://odontologia.uchile.cl" target="_blank" rel="noopener noreferrer" title="Facultad de Odontología">Odontología</a></li>
+					<li><a href="https://ie.uchile.cl" target="_blank" rel="noopener noreferrer" title="Instituto de Estudios Avanzados en Educación">Estudios Avanzados en Educación</a></li>
+					<li><a href="https://iei.uchile.cl" target="_blank" rel="noopener noreferrer" title="Instituto de Estudios Internacionales">Estudios Internacionales</a></li>
+					<li><a href="https://inta.uchile.cl" target="_blank" rel="noopener noreferrer" title="Instituto de Nutrición y Tecnología de los Alimentos">Nutrición y Tecnología de Alimentos</a></li>
+					<li><a href="https://www.bachillerato.uchile.cl" target="_blank" rel="noopener noreferrer" title="Programa Académico de Bachillerato">Bachillerato</a></li>
+					<li><a href="https://www.redclinica.cl" target="_blank" rel="noopener noreferrer" title="Hospital Clínico Universidad de Chile">Hospital Clínico</a></li>
+				</ul>
+				<a href="https://www.u-cursos.cl/" target="_blank" rel="noopener noreferrer" title="Plataforma de apoyo a la docencia">U-Cursos</a>
+				<a href="https://ucampus.uchile.cl" target="_blank" rel="noopener noreferrer" title="Centro Tecnológico Ucampus">Ucampus</a>
+				<a href="https://mi.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Intranet de servicios personalizados">Mi Uchile</a>
+				<a href="https://uchile.cl/bibliotecas" target="_blank" rel="noopener noreferrer" title="Información y bibliotecas">Bibliotecas</a>
+				<a href="/english" title="English version">English</a>
+			</div>
+		</div>
+	</div>
+	<!-- Logotipo + Canales -->
+	<div class="header__banner">
+		<div class="container">
+			<a href="#;" title="Abrir navegador" class="header__open-nav"><span class="ln-1"></span><span class="ln-2"></span><span class="ln-3"></span><span class="txt">MENÚ</span></a>
+			<a href="/" class="header__logo" accesskey="1"><img src="/.resources/portal-ingenieria/images/fcfm.png" alt="Facultad de Ciencias Físicas y Matemáticas - Universidad de Chile"></a>
+		</div>
+	</div>
+	<!-- Menu principal -->
+	<nav class="header__nav">
+		<div class="container">
+			<ul class="header__links">
+				<li><a href="/carreras" title="Información y servicios para postulantes">Postulantes</a></li>
+				<li><a href="javascript:void(0)" title="Información y servicios para estudiantes" class="header__links-drop">Estudiantes</a>
+					<ul class="header__links-dropdown">
+						<li><a href="/escuela" title="Escuela de Ingeniería y Ciencias de la FCFM">Pregrado</a></li>
+						<li><a href="/postgrados" title="Programa de Postgrado">Postgrado</a></li>
+						<li><a href="/educacion-continua" title="Programa de Educación Continua">Educación Continua</a></li>
+					</ul>
+				</li>
+				<li><a href="/academicos" title="Información y servicios para académicas y académicos">Académicas/os</a></li>
+				<li><a href="/funcionarios" title="Información y servicios para funcionarias y funcionarias">Funcionarias/os</a></li>
+				<li><a href="/postdoctorantes" title="Información y servicios investigadores postdoctorales">Postdoctorantes</a></li>
+				<li><a href="/egresados" title="Alumni FCFM">Alumni</a></li>
+			</ul>
+
+			<ul class="header__nav-menu">
+				<li><a href="/sobre-la-fcfm" title="Sobre la FCFM">Sobre la FCFM</a></li>
+				<li>
+					<a href="/admision" title="Admisión" class="header__nav-dropAdmi">Admisión</a>
+					<ul class="header__nav-dropdownAdmi">
+						<li><a href="/carreras" title="Carreras y licenciaturas">Carreras y Licenciaturas</a></li>
+						<li><a href="/postgrados" title="Programas de postgrado">Programas de Postgrado</a></li>
+						<li><a href="/educacion-continua" title="Programas de Educación Continua">Programas de Educación Continua</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0)" title="Departamentos" class="header__nav-dropDepa">Departamentos</a>
+					<ul class="header__nav-dropdownDepa">
+						<li><a href="https://das.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Astronomía">Astronomía</a></li>
+						<li><a href="https://dcc.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ciencias de la Computación">Ciencias de la Computación</a></li>
+						<li><a href="https://dfi.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Física">Física</a></li>
+						<li><a href="http://dgf.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Geofísica">Geofísica</a></li>
+						<li><a href="https://geologia.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Geología">Geología</a></li>
+						<li><a href="https://ingcivil.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Civil">Ingeniería Civil</a></li>
+						<li><a href="https://minas.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería de Minas">Ingeniería de Minas</a></li>
+						<li><a href="https://www.die.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Eléctrica">Ingeniería Eléctrica</a></li>
+						<li><a href="https://www.dii.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Industrial">Ingeniería Industrial</a></li>
+						<li><a href="http://www.dim.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Matemática">Ingeniería Matemática</a></li>
+						<li><a href="https://dimec.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Mecánica">Ingeniería Mecánica</a></li>
+						<li><a href="https://diqbm.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Departamento de Ingeniería Química, Biotecnología y Materiales">Ingeniería Química, Biotecnología y Materiales</a></li>
+					</ul>
+				</li>
+				<li><a href="/investigacion" title="Investigación">Investigación</a></li>
+				<li><a href="/campus-beauchef" title="Campus BEAUCHEF">Campus BEAUCHEF</a></li>
+			</ul>
+		</div>
+	</nav>
+	<a href="#content" title="Saltar al contenido" style="display: none" accesskey="s">Ir al contenido</a>
+</header>
+
+<section class="ingenieria fcfm content archivos " id="content">
+  <div class="content__header"><h1><a href="/noticias">Noticias</a></h1>
+</div>
+  <div class="content__wrap">
+    <div class="content__mobile"></div>
+    <aside class="content__aside"><script type="text/javascript">
+
+    window.onload = function() {
+        $('.calendario').datepicker({
+          showWeek: true,
+          firstDay: 1,
+          dayNamesMin: ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+          dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+          monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+          monthNamesShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+          dateFormat: "dd/mm/yy"
+        });
+    }
+
+    function ltrim(str) {
+        for(var k = 0; k < str.length && isWhitespace(str.charAt(k)); k++);
+        return str.substring(k, str.length);
+    }
+    function rtrim(str) {
+        for(var j=str.length-1; j>=0 && isWhitespace(str.charAt(j)) ; j--) ;
+        return str.substring(0,j+1);
+    }
+    function trim(str) {
+        return ltrim(rtrim(str));
+    }
+    function isWhitespace(charToCheck) {
+        var whitespaceChars = " \t\n\r\f";
+        return (whitespaceChars.indexOf(charToCheck) != -1);
+    }
+
+    function diaActual(){
+        hoyTmp = new Date();
+        dia = hoyTmp.getDate();
+        mes = hoyTmp.getMonth();
+        anio = hoyTmp.getFullYear();
+        dia = dia +1;
+        mes = mes + 1;
+
+
+        return (dia + '/' + mes + '/'+ anio);
+    }
+    function resetearFechas()
+    {
+        document.getElementById("desde").value="";
+        document.getElementById("hasta").value="";
+    }
+
+    function resetearPeriodos(){
+
+        radio = document.getElementsByName("periodo");
+        for (var i = 0; i < radio.length; i++) {
+            radio[i].checked = false;
+        }
+        desde = document.getElementsByName("desde");
+        hasta = document.getElementsByName("hasta");
+        var desdeTxt=desde[0].value;
+        var hastaTxt=hasta[0].value;
+        banderaDesde= true;
+        baderaHasta=true;
+        if(desdeTxt.length>0){
+            if (!ValidarFecha(desdeTxt)){
+                desde[0].value="";
+                alert("Fecha incorrecta.");
+                desde[0].value.focus();
+                banderaDesde= false;
+            }
+        }
+        if(hastaTxt.length>0){
+            if (!ValidarFecha(hastaTxt)){
+                hasta[0].value="";
+                alert("Fecha incorrecta.");
+                hasta[0].value.focus();
+                baderaHasta=false;
+            }
+        }
+
+        if((desdeTxt.length>0 && hastaTxt.length>0)&&(baderaHasta && banderaDesde)){
+            if(!validarDesdeHasta(desdeTxt,hastaTxt)){
+
+                alert("La fecha desde tiene que ser menor que la fecha hasta.");
+                hasta[0].value="";
+                hasta[0].value.focus();
+            }
+        }
+    }
+
+    function validarDesdeHasta(desdeTxt, hastaTxt){
+
+        desdeTxt=PasarFechaJs(desdeTxt)
+        hastaTxt=PasarFechaJs(hastaTxt)
+
+        initDate = new Date(desdeTxt);
+        endDate = new Date(hastaTxt);
+        if(initDate - endDate > 0){
+
+
+            return false;
+        }
+        return true;
+    }
+
+
+    function validaFormulario(form){
+
+        periodo = document.getElementsByName("periodo");
+        texto = trim(document.getElementById("texto").value).replace(/\s+/g,'-').toLowerCase();
+        desde = trim(document.getElementById("desde").value);
+        hasta = trim(document.getElementById("hasta").value);
+
+        var seleccionado= '/noticias';/**/
+        var radioOk = false;
+
+        for (var i = 0; i < periodo.length; i++) {
+            if(periodo[i].checked == true)
+            {
+                radioOk = true;
+
+                /**/
+                if (!(periodo[i].id == 'todas')){
+                    if (!(periodo[i].id == 'ultimo_periodo')){
+                        seleccionado = seleccionado +'/'+periodo[i].id.replace('_','-');
+                    }else{
+                        seleccionado = seleccionado +'/ultimo-ano';
+                    }
+                }
+                /**/
+
+            }
+        }
+
+        form.action = seleccionado;/**/
+        if(radioOk == false && isWhitespace(texto) && isWhitespace(desde) && isWhitespace(hasta))
+        {
+            alert("Debe ingresar un criterio de búsqueda.");
+            return false;
+        }
+        else
+        {
+            if(!isWhitespace(texto))
+            {
+                if(radioOk == false && isWhitespace(desde) && isWhitespace(hasta))
+                {
+                    alert("Debe ingresar un periodo de búsqueda para el texto.");
+                    return false;
+                }
+                else
+                {
+                    if(radioOk == false && (isWhitespace(desde) || isWhitespace(hasta)))
+                    {
+                        alert("Debe ingresar las dos fechas.");
+                        return false;
+                    }
+                }
+                /**/
+
+                if (isWhitespace(desde) && isWhitespace(hasta)){
+
+                    form.action = seleccionado+'/buscar/'+texto;
+                }else{
+
+                    form.action = seleccionado+'/periodo/'+fechasConGuion(desde)+'/'+fechasConGuion(hasta)+'/buscar/'+texto;
+                }
+                /**/
+            }
+            else
+            {
+                if(radioOk == false && (isWhitespace(desde) || isWhitespace(hasta)))
+                {
+                    alert("Debe ingresar las dos fechas.");
+                    return false;
+                }
+                /**/
+                if (radioOk == false){
+                    form.action =  seleccionado+'/periodo/'+fechasConGuion(desde)+'/'+fechasConGuion(hasta);
+                }
+                /**/
+            }
+
+        }
+
+
+    }
+    function PasarFechaJs(Cadena){
+        var Fecha= new String(Cadena)
+        var fechaJs
+        var RealFecha= new Date()
+        // Cadena Año
+        var Ano= new String(Fecha.substring(Fecha.lastIndexOf("/")+1,Fecha.length))
+        // Cadena Mes
+        var Mes= new String(Fecha.substring(Fecha.indexOf("/")+1,Fecha.lastIndexOf("/")))
+        // Cadena Día
+        var Dia= new String(Fecha.substring(0,Fecha.indexOf("/")))
+        fechaJs = Mes + "/" + Dia +"/"+ Ano
+        return fechaJs;
+    }
+    function fechasConGuion(Cadena){
+        var Fecha= new String(Cadena)
+        var fechaJs
+        var RealFecha= new Date()
+        // Cadena Año
+        var Ano= new String(Fecha.substring(Fecha.lastIndexOf("/")+1,Fecha.length))
+        // Cadena Mes
+        var Mes= new String(Fecha.substring(Fecha.indexOf("/")+1,Fecha.lastIndexOf("/")))
+        // Cadena Día
+        var Dia= new String(Fecha.substring(0,Fecha.indexOf("/")))
+        fechaJs = Dia + "-" + Mes +"-"+ Ano
+        return fechaJs;
+    }
+
+    function ValidarFecha(Cadena){
+        var Fecha= new String(Cadena)
+        var RealFecha= new Date()
+        // Cadena Año
+        var Ano= new String(Fecha.substring(Fecha.lastIndexOf("/")+1,Fecha.length))
+        // Cadena Mes
+        var Mes= new String(Fecha.substring(Fecha.indexOf("/")+1,Fecha.lastIndexOf("/")))
+        // Cadena Día
+        var Dia= new String(Fecha.substring(0,Fecha.indexOf("/")))
+        // Valido el año
+        if (isNaN(Ano) || Ano.length<4 || parseFloat(Ano)<1900){
+            return false
+        }
+        // Valido el Mes
+        if (isNaN(Mes) || parseFloat(Mes)<1 || parseFloat(Mes)>12){
+            return false
+        }
+        // Valido el Dia
+        if (isNaN(Dia) || parseInt(Dia, 10)<1 || parseInt(Dia, 10)>31){
+            return false
+        }
+        if (Mes==4 || Mes==6 || Mes==9 || Mes==11 || Mes==2) {
+            if (Mes==2 && Dia > 28 || Dia>30) {
+                return false
+            }
+        }
+        if (Ano.length == Fecha.length ){
+            return false
+        }
+        return true;
+
+    }
+
+    function validaCaracter(event){
+        if (event.charCode==35 || event.charCode==36 || event.charCode==37 || event.charCode==38 ||  event.charCode==39 || event.charCode==43 || event.charCode==45 )
+        {
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
+
+
+</script>
+
+
+<div class="mod mod_news-search">
+  <div class="mod__titles">
+        <h2 class="mod__title">
+      Buscador de noticias
+    </h2>
+  </div>
+  <div class="mod__body">
+    <form class="form-horizontal" onsubmit="return validaFormulario(this)" method="post" autocomplete="off">
+      <input name="_nfpb" type="hidden" value="true">
+      <input name="_pageLabel" type="hidden" value="notHist<%out.print(Utilitarios.obtieneDefinitionIDDesktop(request) );%>">
+      <div class="form-group">
+        <label class="control-label" for="texto">Por título o palabra clave</label>
+        <input type="text" class="form-control" name="texto" id="texto"  maxlength="500" onkeypress="return validaCaracter(event);">
+      </div>
+      <div class="radio mod_news-search__radio">
+        <label for="todas">
+          <input type="radio" checked="checked" class="todas" name="periodo" id="todas" value="1" onclick="resetearFechas()" onchange="resetearFechas()">
+          Todas
+        </label>
+        <label for="ultima_semana">
+          <input type="radio" class="ultima_semana" name="periodo" id="ultima_semana" value="2" onclick="resetearFechas()" onchange="resetearFechas()">
+          Última semana
+        </label>
+        <label for="ultimo_mes">
+          <input type="radio" class="ultimo_mes" name="periodo" id="ultimo_mes" value="3" onclick="resetearFechas()" onchange="resetearFechas()">
+          Último mes
+        </label>
+        <label for="ultimo_periodo">
+          <input type="radio" class="ultimo_periodo" name="periodo" id="ultimo_periodo" value="4" onclick="resetearFechas()" onchange="resetearFechas()">
+          Último año
+        </label>
+      </div>
+      <div class="form-group mod_news-search__dates">
+        <div class="form-group">
+          <label class="mod_news-search__cal-label" for="desde">Desde</label>
+          <input type="text" class="form-control mod_news-search__cal calendario desde" id="desde" name="desde" onclick="javascript: resetearPeriodos()" onchange="javascript: resetearPeriodos()">
+        </div>
+        <div class="form-group">
+          <label class="mod_news-search__cal-label" for="hasta">Hasta</label>
+          <input type="text" class="calendario hasta form-control mod_news-search__cal" id="hasta" name="hasta" onclick="javascript: resetearPeriodos()" onchange="javascript: resetearPeriodos()">
+        </div>
+      </div>
+      <input type="submit" value="Buscar" title="Buscar" class="btn mod_news-search__submit">
+    </form>
+  </div>
+</div>
+</aside>
+    <div class="content__main">
+<div class="mod mod_news-result perrito">
+    <h1 class="mod__title">Archivo de noticias</h1>
+    <div class="mod__body">
+        <div class="mod__list">
+                  <a class="mod__list-item" href="/noticias/245070/openbeauchef-representa-a-chile-en-taller-apec-sobre-emprendimiento-e-ia">
+                      <h3 class="mod_last-news__item-title">OpenBeauchef representa a Chile en workshop de APEC sobre emprendimiento en la era de la IA</h3>
+                        <p class="mod_last-news__item-teaser">En China, el director ejecutivo de OpenBeauchef presentó cómo la Facultad de Ciencias Físicas y Matemáticas de la U. de Chile apoya a startups de base científico-tecnológica potenciadas por inteligencia artificial.</p>
+                      <span class="mod__more-span">Continuar leyendo</a>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/245045/estudiante-del-dcc-obtiene-segundo-lugar-en-conferencia-internacional">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:e63e0972-5bb6-4283-93ac-aa282977fd52/C_estudiante_Pablo_Benario.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Estudiante del DCC obtiene segundo lugar en conferencia internacional de lenguajes de programación
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/245040/suseso-lanza-vigia-plataforma-que-apoya-fiscalizacion-de-licencias-medicas">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:fb8d08e3-c900-4b3e-a90d-c9c7b787ff74/i_%20VigIA%20en%20uso.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Suseso lanza VigIA, plataforma desarrollada junto a la U. de Chile para apoyar la fiscalización de licencias médicas
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244960/proyectos-fcfm-vinculados-a-la-ia-se-adjudican-concurso-idea-2026">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:0be9c0ff-3f44-4925-8e78-ea48bec72b73/C_software-developer-analyzing-complex-network-data-visualization.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Proyectos FCFM vinculados a la IA se adjudican Concurso de Investigación Tecnológica IDeA 2026
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244870/nuevo-metodo-para-transportar-luz-con-poca-energia">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:3f1879df-0458-4338-9586-7aa4ce831fb3/Cabeceras_luz.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Nuevo método para transportar luz con poca energía abre posibilidades para crear tecnología más rápida y eficiente
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244810/el-matematico-que-dijo-que-no">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:0734c894-26aa-4ee0-b095-27725320d86b/C_carlaH.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      El matemático que dijo que no
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244795/uchile-y-codelco-graduan-a-15-profesionales">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:ed1f4048-78cf-46d9-bcf0-2da23d22f20d/FCFM_UCHILE_CODELCO-65.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      UCHILE y Codelco gradúan a 15 profesionales en Diplomado en Infraestructura Crítica Minera
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244781/fcfm-impulsa-practicas-restaurativas-para-fortalecer-la-convivencia-">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:c1a4aeaa-67ca-4823-a1f4-e94a499d49ef/imagen-representativa-fcfm.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      FCFM impulsa prácticas restaurativas para fortalecer la convivencia universitaria
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244773/catl-y-fcfm-firman-acuerdo-de-cooperacion">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:bea5246c-e936-488d-86f4-eb5bf1ea27cb/CATL_representativa.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      CATL y FCFM firman acuerdo de cooperación en energía, investigación y formación avanzada
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244767/graduada-de-geofisica-uchile-obtiene-premio-for-women-in-science">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:30f052c6-c3f1-4b80-b662-b90f2479ce88/1600x600.png" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Graduada de Geofísica Uchile obtiene premio “For Women in Science” por su trabajo en geociencias
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244764/fcfm-es-sede-de-encuentro-global-sobre-movilidad-y-transporte-sustentable">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:898886b5-9fd9-4906-9fc5-6c5bb2370a58/C_electromovilidad.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      FCFM es sede de encuentro global sobre movilidad y transporte sustentable
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244752/bechtel-challenge-2026-logra-sumar-nuevos-estudiantes-a-sus-equipos">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:c1a4aeaa-67ca-4823-a1f4-e94a499d49ef/imagen-representativa-fcfm.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Bechtel Challenge 2026 Potencia Nuevos Liderazgos
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244719/fcfm-y-caja-los-andes-reconocen-a-100-colaboradores">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:1fbc0e13-2774-41b4-b621-4d1091ccaee8/FCFM_UCHILE_CAJA_LOS_ANDRES-45.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      FCFM y Caja Los Andes reconocen a +100 colaboradores que finalizaron Diplomados FCFM
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244695/workshop-entre-uchile-y-science-tokyo-potencia-alianza-ingenieria--salud">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:8b036cc5-6eef-4369-bf73-ca9f68624fdc/a_sciencetokyo.png" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Workshop bilateral entre Uchile y Science Tokyo potencia la alianza Ingeniería + Salud
+                      </h3>
+                  </a>
+                  <a class="mod__list-item" href="/noticias/244672/fcfm-aborda-riesgos-de-la-huella-digital-y-refuerza-autocuidado-en-rrss">
+                        <figure class="mod__img">
+                            <img src="/dam/jcr:b690284a-d2ed-4fd7-99d7-a6165631b357/Huella%20Digital_representativa.jpg" alt="">
+                        </figure>
+                      <h3 class="mod_last-news__item-title">
+                      Comunidad FCFM reflexiona sobre los riesgos de la huella digital y el autocuidado en redes sociales
+                      </h3>
+                  </a>
+        </div>
+
+        <div class="mod mod_pager">
+
+            <ul class="mod_pager__list">
+
+
+
+                        <li><em>actual: </em><strong>1</strong></li>
+                        <li><a href="/noticias/2" title="Page">2</a></li>
+                        <li><a href="/noticias/3" title="Page">3</a></li>
+
+                        <li class="mod_pager__ellipsis"><span>...</span></li>
+                    <li><a href="/noticias/7" title="Page">7</a></li>
+
+                    <li class="mod_pager__next next"><a href="/noticias/2" title="Page">siguiente</a></li>
+            </ul>
+        </div><!-- end pager -->
+    </div>
+</div>
+</div>
+  </div>
+</section>
+
+<footer>
+    <div class="container">
+        <ul class="footer__nav">
+            <li><a href="/escuela" title="Escuela de Ingeniería y Ciencias">Escuela de Ingeniería y Ciencias</a></li>
+            <li><a href="/escuela-postgrado" title="Escuela de Postgrado y Educación Continua">Escuela de Postgrado y Educación Continua</a></li>
+            <li><a href="/extension" title="Vinculación">Vinculación</a></li>
+            <li><a href="/internacional" title="Internacional">Internacional</a></li>
+            <li><a href="/sustentabilidad" title="Sustentabilidad">Sustentabilidad</a></li>
+            <li><a href="/biblioteca" title="Biblioteca">Biblioteca</a></li>
+        </ul>
+        <div class="footer__columns">
+            <div class="footer__text">
+                <p><strong>Facultad de Ciencias Físicas y Matemáticas</strong></p>
+                <p>Universidad de Chile</p>
+                <address>Beauchef 850, Santiago</address>
+                <p><a href="mailto:contacto@fcfm.uchile.cl" title="Correo de contacto" target="_blank" rel="noopener noreferrer">contacto@fcfm.uchile.cl</a></p>
+            </div>
+            <div class="footer__social">
+                <a class="facebook" href="https://www.facebook.com/ingenieria.uchile" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="i-facebook"></i></a>
+                <a class="instagram" href="https://www.instagram.com/fcfm_uchile?igsh=bDZoejVpc3JqanZq" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="i-instagram"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/company/facultad-de-ciencias-f%C3%ADsicas-y-matematicas-uchile/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="i-linkedin"></i></a>
+                <a class="twitter" href="https://x.com/uchile_beauchef" target="_blank" rel="noopener noreferrer" title="X"><i class="i-twitter"></i></a>
+                <a class="youtube" href="https://www.youtube.com/c/FCFMUChileTV" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="i-youtube"></i></a>
+            </div>
+            <div class="footer__links">
+                <ul>
+                    <li><a href="/admision" title="Ir a admisión">Admisión</a></li>
+                    <li><a href="/noticias-facultad" title="Ir a noticias" accesskey="2">Noticias</a></li>
+                    <li><a href="/agenda" title="Ver actividades">Agenda</a></li>
+                    <li><a href="/fotos" title="Ver galerías de fotos">Galerías de fotos</a></li>
+                    <li><a href="/videos" title="Ver videos">Videos</a></li>
+                    <li><a href="/prensa/subdireccion-de-comunicaciones" title="Prensa">Prensa</a></li>
+                    <li><a href="https://www.edv.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Escuela de Verano">Escuela de Verano</a></li>
+                    <li><a href="https://tiendabeauchef.ing.uchile.cl/" target="_blank" rel="noopener noreferrer" title="Ir a tienda Beauchef">Tienda Beauchef</a></li>
+                    <li><a href="/campus-beauchef/ubicacion-y-mapas/como-llegar" title="¿Cómo llegar?">Cómo llegar</a></li>
+                    <li><a href="/sobre-la-fcfm/servicios/contacto" title="Ir a contactos">Contacto</a></li>
+                    <li><a href="https://ucampus.uchile.cl/m/guia_telefonica/?filtro=fcfm" target="_blank" rel="noopener noreferrer" title="Guía telefónica">Guía telefónica</a></li>
+                </ul>
+            </div>
+            <div class="footer__acreditacion">
+                <a href="https://uchile.cl/i87289">
+                    <img src="/.resources/portal-uchile/images/acreditacion_footer.svg" alt="Universidad de Chile acreditada, nivel de excelencia en todas las áreas. Hasta diciembre de 2032 - Comisión Nacional de Acreditación CNCA" width="100%">
+                <!--<p><strong>U. de Chile acreditada por el máximo periodo</strong></p>
+                <p>Gestión institucional<br>
+                    Docencia de pregrado<br>
+                    Investigación<br>
+                    Vinculación con el medio<br>
+                    Docencia de postgrado</p>
+                <div class="footer__acreditacion-legal">
+                    <figure><img src="/.resources/portal-ingenieria/images/logo-cna.svg" alt="Comisión Nacional de Acreditación CNCA - Chile"></figure>
+                    <div class="acreditacion">
+                        <div class="acreditacion-anios"><span>7</span> años</div>
+                        <div class="acreditacion-txt">
+                            <span>Dic 2018 - Dic 2025</span>
+                        </div>
+                    </div>
+                </div>-->
+            </a>
+        </div>
+    </div>
+    <div class="footer__credit">
+        <p title="Desarrollado por">Desarrollado por 
+            <a href="https://uchile.cl/sisib" target="_blank" rel="noopener noreferrer" title="Dirección de Servicios de Información y Bibliotecas - SISIB">SISIB</a> y 
+            <a href="https://uchile.cl/vti" target="_blank" rel="noopener noreferrer" title="Vicerrectoría de Tecnologías de la Información - VTI">VTI</a>, 
+            <a href="https://uchile.cl/" target="_blank" rel="noopener noreferrer" title="Universidad de Chile">U. de Chile</a>, junto a 
+            <a href="/extension/quienes-somos/subdirecciones/subdireccion-de-comunicaciones" title="Subdirección de Comunicaciones FCFM">Subdirección de Comunicaciones FCFM</a> | 
+            <a href="/sobre-la-fcfm/servicios/mapa-del-sitio" title="Mapa del sitio" accesskey="3">Mapa del sitio</a> |
+            <a href="/sobre-la-fcfm/servicios/politica-de-privacidad-de-la-informacion-y-datos-personales" title="Política de privacidad">Privacidad</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/.resources/portal-uchile/scripts/vendor.js"></script>
+<script src="/.resources/portal-uchile/scripts/jquery.quicksearch.js"></script>
+<script src="/.resources/portal-uchile/scripts/jquery.fancybox.min.js"></script>
+<script src="/.resources/portal-ingenieria/scripts/slick.min.js"></script>
+<script src="/.resources/portal-ingenieria/scripts/appear.min.js"></script>
+<script src="/.resources/portal-ingenieria/scripts/main.js"></script>
+
+
+<script src="/.resources/portal-ingenieria/scripts/no-editor20.js"></script>
+
+</body>
+</html>

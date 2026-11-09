@@ -197,6 +197,8 @@ def _resumen_evento(evento: dict[str, Any]) -> str | None:
                 f"costo usd {evento.get('total_cost_usd', 0):.2f} | error {evento.get('is_error')}")
     if tipo == "system" and evento.get("subtype") == "init":
         return f"sesion iniciada, modelo {evento.get('model')}, herramientas {evento.get('tools')}"
+    if tipo == "system" and evento.get("subtype") == "model_fallback":
+        return "AVISO: el modelo principal no respondio; se cambio al modelo de respaldo (fallback-model)"
     return None
 
 
@@ -243,11 +245,15 @@ def invocar_claude(prompt: str, cfg_red: dict[str, Any], log_path: Path, intento
     return codigo
 
 
-def ejecutar(cfg: dict[str, Any], desde: date, hasta: date, episodio: int | None, solo_prompt: bool = False) -> validar.Resultado:
+def ejecutar(cfg: dict[str, Any], desde: date, hasta: date, episodio: int | None, solo_prompt: bool = False,
+            guion: str | None = None) -> validar.Resultado:
+    """guion: ruta alternativa para el guion.md (por defecto input/guion.md). Sirve para comparar metodos
+    (este pipeline vs. pegar el prompt a mano en claude.ai) sin que uno le pise el archivo al otro."""
     red = cfg["redaccion"]
     run = hasta.isoformat()
     run_dir = RAIZ / cfg["ranking"].get("salida_dir", "runs") / run
-    rutas = validar.rutas_run(run, cfg)
+    rutas = validar.rutas_run(run, cfg, guion=guion)
+    rutas.guion.parent.mkdir(parents=True, exist_ok=True)
     prompt_path = RAIZ / red.get("prompt_path", "prompts/redaccion.md")
     apoyo_path = run_dir / "apoyo.json"
 
@@ -309,10 +315,13 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--episodio", type=int)
     ap.add_argument("--config", default="config.yaml")
     ap.add_argument("--solo-prompt", action="store_true", help="renderiza el prompt y termina, sin invocar claude")
+    ap.add_argument("--guion", help="ruta alternativa para el guion.md (por defecto input/guion.md); "
+                                    "para comparar contra un guion pegado a mano sin pisarlo")
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     try:
-        resultado = ejecutar(cargar_config(args.config), args.desde, args.hasta, args.episodio, args.solo_prompt)
+        resultado = ejecutar(cargar_config(args.config), args.desde, args.hasta, args.episodio, args.solo_prompt,
+                             args.guion)
     except ErrorRedaccion as e:
         log.error("%s", e)
         return 2

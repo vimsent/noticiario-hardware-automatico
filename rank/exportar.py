@@ -17,8 +17,9 @@ def ordenar(grupos: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(grupos, key=lambda g: (-g["score_prelim"], -g["n_medios"], _fecha_desc(g["fecha_hecho"]), g["clave"]))
 
 
-def seleccionar(grupos: list[dict[str, Any]], max_grupos: int, max_grupos_chile: int) -> list[dict[str, Any]]:
-    """Todos los eventos mayores, hasta N de Chile y los N mejores del resto."""
+def seleccionar(grupos: list[dict[str, Any]], max_grupos: int, max_grupos_chile: int,
+                max_grupos_prioritarios: int = 0) -> list[dict[str, Any]]:
+    """Todos los eventos mayores, hasta N de Chile, hasta N de temas prioritarios y los N mejores del resto."""
     ordenados = ordenar(grupos)
     elegidos: list[dict[str, Any]] = []
     claves: set[str] = set()
@@ -36,6 +37,11 @@ def seleccionar(grupos: list[dict[str, Any]], max_grupos: int, max_grupos_chile:
         if g["es_chile"] and g["clave"] not in claves and n_chile < max_grupos_chile:
             agregar(g)
             n_chile += 1
+    n_prio = 0
+    for g in ordenados:
+        if g.get("tema_prioritario") and g["clave"] not in claves and n_prio < max_grupos_prioritarios:
+            agregar(g)
+            n_prio += 1
     n_resto = 0
     for g in ordenados:
         if g["clave"] not in claves and n_resto < max_grupos:

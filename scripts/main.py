@@ -73,6 +73,7 @@ def main():
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
     blocks_json = output_dir / "bloques.json"
     audio_dir = output_dir / "audio"
@@ -80,18 +81,27 @@ def main():
     audio_manifest = output_dir / "audio_manifest.json"
     visuals_manifest = output_dir / "visuals_manifest.json"
 
+    # El video final va dentro de --output-dir (con el nombre de archivo que diga config.yaml),
+    # no en la ruta fija del config: así dos corridas con --output-dir distinto (ej. para comparar
+    # este pipeline contra un guion pegado a mano) no se pisan el video una a la otra. Con
+    # --output-dir en su valor por defecto ("output") esto da exactamente la misma ruta de siempre.
+    cfg["video"]["output_path"] = str(output_dir / Path(cfg["video"]["output_path"]).name)
+    config_efectivo = output_dir / "config_efectivo.yaml"
+    config_efectivo.write_text(yaml.safe_dump(cfg, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    config_arg = str(config_efectivo)
+
     skip_audio = args.skip_audio or args.only_assemble
     skip_visuals = args.skip_visuals or args.only_assemble
 
     if not args.only_assemble:
         run([
             sys.executable, str(SCRIPTS_DIR / "parse_script.py"),
-            args.script, str(blocks_json), args.config,
+            args.script, str(blocks_json), config_arg,
         ])
         if not args.no_lint:
             run([
                 sys.executable, str(SCRIPTS_DIR / "lint_script.py"),
-                args.script, str(blocks_json), args.config,
+                args.script, str(blocks_json), config_arg,
             ])
 
     if skip_audio:
@@ -100,7 +110,7 @@ def main():
     else:
         run([
             sys.executable, str(SCRIPTS_DIR / "generate_audio.py"),
-            str(blocks_json), str(audio_dir), args.config,
+            str(blocks_json), str(audio_dir), config_arg,
         ])
 
     if skip_visuals:
@@ -109,12 +119,12 @@ def main():
     else:
         run([
             sys.executable, str(SCRIPTS_DIR / "generate_visuals.py"),
-            str(blocks_json), str(visuals_dir), args.config,
+            str(blocks_json), str(visuals_dir), config_arg,
         ])
 
     run([
         sys.executable, str(SCRIPTS_DIR / "assemble_video.py"),
-        str(audio_manifest), str(visuals_manifest), args.config,
+        str(audio_manifest), str(visuals_manifest), config_arg,
     ])
 
     failed = [m for m in json.loads(audio_manifest.read_text(encoding="utf-8")) if m.get("failed")]

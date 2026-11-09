@@ -1,152 +1,202 @@
+# guion.md
+
 [INTRO]
-Hola a todos, bienvenidos al segundo episodio del noticiario semanal de hardware.
 
-Esta semana cubrimos del 14 al 20 de septiembre de 2026. Semana de Fiestas Patrias acá, así que si andan con la cabeza todavía en la fonda, yo se las traigo de vuelta al silicio.
+¡Hola, hola! Bienvenidos al episodio 4 del noticiario de hardware con mirada chilena.
 
-Y vale la pena, porque la semana giró casi entera alrededor de la memoria: SK hynix aparece conversando con Intel para fabricar RAM en Estados Unidos, Micron mostró un módulo de 512 gigas, y de paso Amazon se metió a comprar un pedazo de Qualcomm con una noticia que se nos pasó la semana anterior.
+Esta vez cubrimos del domingo 25 de octubre al domingo 1 de noviembre de 2026.
 
-Vamos al tiro con lo grande.
+Vale la pena por una razón: la escasez de memoria dejó de ser una queja de los que armamos PC. Esta semana le borró más de un cuarto de su valor en bolsa a Intel en un solo día.
 
-[NOTICIA 1: SK hynix e Intel conversan para fabricar memoria en Estados Unidos]
-El miércoles 16 Reuters publicó una exclusiva que movió a medio mercado: SK hynix, el segundo fabricante de memoria del mundo, está en conversaciones con Intel para producir chips de memoria en Estados Unidos por primera vez.
+Vamos al tiro.
 
-Ojo con el estatus desde ya, porque acá hay dos capas. La primera capa es el reporte de Reuters, que cita fuentes anónimas. Eso es un reporte de prensa, no un anuncio. La segunda capa sí es oficial: el mismo día SK hynix publicó una aclaración en su sala de prensa diciendo que está explorando varias opciones para fortalecer su competitividad global, pero que no hay ningún plan ni acuerdo cerrado con ninguna empresa específica ni sobre producción de memoria en Estados Unidos. Intel, por su lado, le dijo a Reuters que no comenta especulaciones, pero que sigue invirtiendo en preparar su sitio de Ohio.
+[NOTICIA 1: La RAM cara ya le pasó la cuenta a Intel]
 
-Y acá viene lo que a mí me llama la atención: eso no es un desmentido. Techzine tituló el viernes que SK hynix niega el acuerdo, y otros medios titularon que SK hynix explora opciones. Es la misma declaración leída de dos formas. Yo la leo así: no hay firma, pero tampoco dijeron que no.
+Partamos recordando dónde quedamos. En el episodio 2 les dije que no esperaran que la RAM bajara. En el 3, que las proyecciones de alza para fin de año iban de 10 a 20 por ciento según a quién le creyeran.
 
-¿Qué es lo que se está conversando, según Reuters? Dos escenarios. Uno: que SK hynix arriende parte de la fábrica que Intel está construyendo en New Albany, Ohio. Dos: un joint venture entre Intel, SK hynix y alguna nube grande, uno de esos hiperescaladores que hoy se comen toda la memoria que existe. Lo que se produciría, según lo que recogió TechPowerUp del reporte, sería DRAM normal, HBM y algo de NAND. Nada de eso está decidido.
+Hasta ahora era un problema del que arma PC. Esta semana pasó a ser un problema de Intel.
 
-Ahora, para entender por qué esto importa, hay que entender qué es una fábrica de memoria y por qué no es lo mismo que una fábrica de procesadores.
+El jueves 29 de octubre Intel publicó su tercer trimestre. Y ojo, que en papel el trimestre fue bueno: ingresos por 16.500 millones de dólares, unos 16,4 billones de pesos al dólar observado de 993 pesos, un 21 por ciento más que hace un año. Eso es confirmado, está en el documento que Intel presentó a la SEC.
 
-Una fab de lógica, como las de Intel, está pensada para hacer chips grandes, complejos, con muchas capas de metal y transistores optimizados para velocidad. Una fab de DRAM hace algo distinto: celdas de un transistor y un capacitor, repetidas miles de millones de veces, con procesos y herramientas propias, y con márgenes que dependen brutalmente del volumen y del rendimiento por oblea. No es que tomes una fab de Intel y le cambies el letrero. Reutilizas el edificio, la sala limpia, el agua, la energía y los permisos, que son la parte lenta y cara, pero adentro tienes que meter la tecnología de proceso de SK hynix. Por eso el escenario del arriendo tiene sentido: Intel tiene un galpón gigante a medio llenar, y SK hynix tiene el know-how que no tiene Intel.
+El problema vino después. Para el cuarto trimestre Intel proyecta entre 15.000 y 16.000 millones de dólares, o sea entre 14,9 y 15,9 billones de pesos. Según Quartz, que cita a Bloomberg, los analistas esperaban en promedio 17.000 millones, y algunos pasaban de 18.000. En utilidad por acción ajustada esperaban 43 centavos, y Intel guió 25.
 
-La analogía que se me ocurre es esta. Intel construyó un mall enorme en Ohio y le sobran locales, porque su propio negocio no da para llenarlo. SK hynix es la tienda ancla que el mall necesita para que valga la pena abrirlo.
+Y el viernes 30 la acción se fue por el barranco. Según MarketBeat cerró con una caída de 28,58 por ciento.
 
-¿Y por qué SK hynix querría fabricar en Estados Unidos, si en Corea le va de maravilla? Según el Korea JoongAng Daily, la respuesta tiene nombre y apellido: Howard Lutnick, el secretario de Comercio de Estados Unidos, que ha amenazado con aranceles de hasta 100 por ciento a los fabricantes de memoria extranjeros que no tengan producción en suelo estadounidense. SK hynix tiene una planta de empaquetado avanzado en Indiana, pero cero fabricación de obleas en Estados Unidos. Y del otro lado, el gobierno coreano considera la fabricación de semiconductores como tecnología nacional estratégica: cualquier acuerdo de este tipo tendría que pasar por una revisión bajo su ley de protección de tecnología industrial, y Seúl además quiere que SK hynix invierta en un clúster dentro de Corea. O sea, la empresa está entre dos gobiernos que tiran para lados opuestos.
+Las cifras de la caída bailan según la hora en que las midieron: 23 por ciento después del cierre del jueves, cerca de 25 en el premercado del viernes, y un diario coreano hablaba de 17. La que vale es la del cierre.
 
-Un detalle de contexto que encontré haciendo el barrido: esta historia no nació esta semana. El 22 de julio SK hynix ya había tenido que aclarar ante el regulador bursátil de Estados Unidos que no estaba negociando comprar el campus de Intel en Ohio, después de un reporte de prensa coreana. Ahora la versión es más suave, arriendo o joint venture, y esta vez no la negaron.
+¿Y por qué tanto castigo? Acá está lo bueno.
 
-El mercado se lo creyó. Según los titulares de 24/7 Wall St y Yahoo Finance, Intel subió alrededor de 4 por ciento el miércoles y cerca de 8 más el jueves, SK hynix entre 3 y 5, y Micron se sumó el jueves con un 6. Que Micron suba con esta noticia les dice algo: el mercado no lo lee como más memoria y precios más bajos, lo lee como que la memoria vale tanto que hasta Intel quiere un pedazo.
+En la llamada con analistas, el CFO David Zinsner dijo que esperan que las unidades de PC del mercado caigan cerca de 12 por ciento en 2026, con un segundo semestre que baja más de 20 por ciento. Y para 2027, otro 10 por ciento menos.
 
-Y ya que estamos con SK hynix, dos cosas de la misma semana que no salieron en nuestras fuentes habituales y que rescaté con el barrido. La primera: el mismo miércoles 16, según Bloomberg, SK hynix cerró el conflicto con su sindicato. Un 57 por ciento de los trabajadores aprobó el convenio revisado, y la mitad del bono de reparto de utilidades se paga en efectivo y la otra mitad en acciones. Ese era uno de los hilos de la crisis de memoria que dejamos abiertos, y se cerró sin huelga. El de Micron en Taiwán sigue: la segunda mediación es el lunes 21.
+Lip-Bu Tan, el CEO, lo dijo sin anestesia: los clientes empezaron a avisar de un frenazo por el precio y la disponibilidad de memoria, y esto dura hasta que la memoria se normalice. Según la transcripción que recoge MarketBeat, enumeró tres problemas de corto plazo: falta de capacidad de fabricación, una crisis de memoria sin precedentes y la caída en la demanda de PC que vino con ella.
 
-La segunda es un rumor, y lo etiqueto como tal: DigiTimes reportó el 9 de septiembre, citando fuentes de la cadena de suministro, que Intel podría recortar otro 5 a 10 por ciento de su plantilla. Intel no lo confirmó, y DigiTimes acierta a veces y falla otras, así que con pinzas. Lo menciono porque calza con el cuadro: una Intel que se achica y necesita que otro le llene la fábrica.
+Ojo con el estatus: esas proyecciones vienen de la transcripción de la llamada publicada por The Motley Fool. En el 10-Q que Intel presentó a la SEC el tono es más suave: dice que los ingresos de CCPG cayeron 5 por ciento por menos volumen de cliente, menor demanda y un mercado competitivo, compensado en parte por precios promedio más altos.
 
-Mi opinión, y esto es opinión: yo creo que el arriendo se va a firmar de alguna forma, porque los incentivos están alineados. Intel necesita ocupar Ohio, Washington necesita una foto con memoria hecha en casa, y SK hynix necesita esquivar un arancel. Lo que no creo es que esto les baje el precio de la RAM a ustedes pronto. Una fab de memoria demora años en producir, y lo que salga de ahí ya está vendido a las nubes antes de fabricarse.
+Ahora, el por qué técnico, que es lo que importa. Intel no vende memoria. ¿Por qué le pega a Intel?
 
-Consejo no pedido para Intel: no vendan esto como un renacer de Intel en memoria. Sean el arrendador honesto, cobren bien, y usen la plata para que la fundición funcione. Que ya es bastante pega.
+Porque Intel le vende el procesador al fabricante del notebook: Dell, Lenovo, HP. Y ese fabricante arma una lista de materiales donde la RAM y el SSD pasaron de ser un ítem chico a uno de los más caros del equipo.
 
-[NOTICIA 2: Amazon se compra un pedazo de Qualcomm para hacer chips de IA]
-Pasemos a una que se nos pasó la semana anterior y que tenemos que rescatar, porque es grande.
+Las fábricas de memoria movieron líneas a HBM, la memoria apilada que va pegada a las GPUs de IA. La HBM se come más oblea por bit que la DDR5 normal, porque son varios dados apilados, conectados con vías que atraviesan el silicio, y el rendimiento de fabricación es más bajo. Cada oblea que se va a HBM es DDR5 o LPDDR5 que no llega a un notebook.
 
-El 8 de septiembre Qualcomm anunció una colaboración de varias generaciones con Amazon para diseñar silicio a medida para los centros de datos de AWS. Eso está confirmado por comunicado de Qualcomm. Pero lo interesante no está en el comunicado, está en lo que reportearon CNBC y Reuters ese mismo día: como parte del acuerdo, Qualcomm le entregó a Amazon warrants para comprar unos 4.000 millones de dólares en acciones de Qualcomm. Al dólar de hoy, que está a 954 pesos con 85, son unos 3,8 billones de pesos chilenos.
+Es como si la mantequilla subiera al triple. La panadería no tiene la culpa, pero la gente deja de comprar sándwich, y el que vende pan igual pierde.
 
-Para el que no cache qué es un warrant: es un derecho a comprar acciones a un precio fijado hoy, en el futuro. Si a Qualcomm le va bien gracias al negocio con Amazon y la acción sube, Amazon ejerce el derecho, compra barato y gana. Es una forma de decir: quiero que te vaya bien, pero también quiero mi parte. Las condiciones exactas de esos warrants no las tengo, así que no me pidan detalles de precio de ejercicio ni de plazos.
+El fabricante de PC tiene dos opciones: subir el precio o recortar la configuración. Tan contó que los precios finales de los equipos subieron harto en lo que va del año, y que eso aprieta presupuestos de TI que ya venían flacos. Resultado: la gente posterga la compra, los fabricantes bajan inventario, y el pedido de CPUs a Intel se cae.
 
-Jon Peddie Research tituló que Amazon está apostando 60 mil millones de dólares en Qualcomm, y TIKR habla de un acuerdo de hasta 60 mil millones. Yo no pude verificar de dónde sale esa cifra, así que la dejo como lo que es: un número que circula en la prensa financiera, no algo que haya confirmado Qualcomm. Serían unos 57 billones de pesos, para que dimensionen.
+Los números por segmento lo muestran clarito. La división de clientes, que ahora se llama CCPG, facturó 8.100 millones de dólares, 5 por ciento menos que hace un año y 9 por ciento menos que el trimestre anterior. Según el 10-Q, el volumen de procesadores para notebook y escritorio cayó 14 por ciento. Y para el próximo trimestre Intel espera que esa división caiga más de 20 por ciento.
 
-Lo que sí dice el comunicado, y es lo técnicamente interesante: no es solo el chip. Qualcomm va a trabajar con Amazon en silicio personalizado para inferencia, y además en conectividad óptica de hasta 1,6 terabits, usando su tecnología de SerDes y de procesadores de señal para óptica. Eso es la fontanería de un centro de datos de IA: cómo mueves datos entre racks a esa velocidad sin fundir el presupuesto de energía. Y hay un detalle que me dio risa: Qualcomm también se compromete a usar más AWS, incluyendo Bedrock, para sus propios flujos de diseño de chips. O sea, Amazon te compra chips y tú le compras nube. Todos contentos.
+Mientras tanto, centro de datos e IA subió 78 por ciento interanual, a unos 7.300 millones. Y fíjense en un detalle del 10-Q: el precio promedio de los procesadores de servidor subió 54 por ciento. O sea, Intel no solo vende más Xeon, los está cobrando bastante más caros porque hay demanda. Mientras el gamer sufre, el hiperescalador paga lo que le pidan.
 
-A mí me parece que esto es Qualcomm buscando un cliente ancla que no sea un teléfono. Yahoo Finance lo tituló, textual, como que el acuerdo con Amazon alivia las preocupaciones por Apple, y yo creo que ahí está la lectura completa: Qualcomm necesita que su negocio deje de depender de celulares, y Amazon necesita chips de inferencia que no sean de NVIDIA. Cuando dos necesitados se juntan, uno de los dos pide garantías. Acá las pidió Amazon, en forma de warrants.
+No fue solo Intel. Según 24/7 Wall St, Dell cayó 13 por ciento y AMD cerca de 11. NVIDIA bajó entre 3 y 4 por ciento según la hora, porque casi no depende del PC. AMD presenta resultados el martes 3 de noviembre, fuera de nuestra ventana, así que eso lo vemos la próxima semana.
 
-[NOTICIA 3: Micron mete 512 gigas en un solo módulo de RAM]
-Y hablando de memoria, que es el tema de la semana, Micron anunció el 15 de septiembre algo que suena a récord de circo pero que tiene sustancia técnica: el primer módulo DDR5 de 512 gigabytes, demostrado funcionando en varias plataformas de servidor. Confirmado por comunicado de Micron, y AMD e Intel dijeron que lo están validando.
+A mí me parece que este es el momento en que la escasez de memoria dejó de ser anécdota de foro y pasó a ser dato macro. Ya no es "uy, la RAM está cara". Es el fabricante de procesadores más grande del PC diciendo que el mercado completo se achica dos años seguidos.
 
-Para dimensionar: en un servidor de dos sockets con 24 ranuras, eso son 12 terabytes de RAM. Doce mil gigas. En un solo computador.
+¿A quién le conviene? A los fabricantes de memoria, que vemos al tiro. ¿A quién le duele? A Intel, a AMD en cliente, a los fabricantes de notebooks, y a ustedes.
 
-¿Cómo lo hacen? Acá viene la parte que me gusta. No es que hayan hecho chips de DRAM más densos de un día para otro. Lo que hacen es apilar dies de DRAM unos sobre otros dentro de cada encapsulado, y conectarlos verticalmente con TSV, que son vías a través del silicio: agujeritos perforados en el chip y rellenos de metal, para que las señales bajen de un piso al otro sin pasar por la placa. Es la misma idea que usa la HBM, la memoria de las tarjetas de IA. Micron la trajo a un módulo DDR5 normal, de los que se enchufan en una ranura de servidor. Y dice que el módulo corre hasta 9.200 megatransferencias por segundo.
+Y acá viene la parte que me da risa. Intel, con todo el discurso de que sus fábricas propias son la gran ventaja, también admitió escasez de manufactura. No alcanzaba a fabricar todo lo que le pedían en servidores y, al mismo tiempo, se le cae el cliente. Mala suerte doble.
 
-La analogía: en vez de comprar cuatro sitios y construir cuatro casas de un piso, construyes un edificio de cuatro pisos en un sitio. El terreno es la ranura DIMM, que es escasa.
+Ahora mi especulación, y la marco como especulación: si el mercado de PC cae 10 por ciento en 2027, los fabricantes van a sostener el precio con configuraciones base más flacas, más memoria soldada y menos RAM. A mí no me extrañaría que vuelvan con fuerza los notebooks de 8 GB con el cuento de que la IA corre en la nube. Ojalá me equivoque.
 
-Y ahí está el punto que importa para un centro de datos: Micron dice que un módulo de 512 gigas consume más de 60 por ciento menos energía que cuatro módulos de 128 gigas. Menos módulos, menos controladores despiertos, menos calor. Para las cargas de bases de datos en memoria y de modelos grandes, donde lo que te mata es tener que ir a disco, esto es plata directa.
+Para el que está armando PC en Chile: el dólar observado del Banco Central quedó en 993 pesos el 30 de octubre, y según La Tercera el dólar cerró su quinto mes seguido al alza. Se suman dos cosas: memoria cara en dólares y dólar caro en pesos. Y a eso súmenle IVA, margen del retail y la espera de importación.
 
-Ahora, la letra chica: producción en volumen recién en la segunda mitad de 2027, y sin precio. Esto es un anuncio de que llegan primero, no de que ya se puede comprar.
+No alcancé a verificar precios de RAM en Solotodo, PC Factory o SPDigital esta semana, así que no les voy a tirar una cifra inventada.
 
-Y para que no se me queden con la idea de que la memoria abunda: ninguno de estos módulos va a llegar a su placa madre, y la crisis para el consumidor sigue igual. Esta semana Valve confirmó, vía IGN y recogido por TechPowerUp, que los planes del Steam Deck 2 no cambiaron por la escasez de RAM, pero admitió que el precio del Steam Machine y del Steam Frame probablemente les pegó a las ventas. Y para aterrizarlo en Chile: hoy domingo, en Solotodo, un kit de dos por 16 gigas DDR5 a 6.000 sale entre 630 y 650 mil pesos, y un solo módulo de 16 gigas a 5.600 anda cerca de 290 mil. Unos 660 dólares por 32 gigas. Yo creo que si andan armando computador, esperen a los resultados de Micron del 30 de septiembre antes de comprar RAM, porque ahí van a dar la guía de precios para lo que queda del año.
+Mi consejo: si necesitan memoria, compren lo que necesitan ahora y no esperen una baja que los propios fabricantes de memoria no ven venir.
 
-De pasada: la misma semana Micron nombró a Deirdre Hanford, 37 años en Synopsys, para dirigir Micron Research Labs, su centro de investigación de largo plazo con 10 mil millones de dólares a diez años. Dato oficial, y ahí lo dejo.
+[NOTICIA 2: SK Hynix y Samsung se forran y la memoria sigue agotada]
 
-[NOTICIA 4: Intel deja de pagar por encontrarle bugs a sus chips]
-En fin, pasemos a algo que tiene poca cobertura pero que a mí me parece una señal fea.
+Y hablando de los que ganan con todo esto, vamos a los coreanos. SK Hynix publicó el 28 de octubre y Samsung el 29. Récord los dos, confirmado por las empresas.
 
-Phoronix se dio cuenta el viernes 18, porque un lector les escribió, de que Intel suspendió su programa de recompensas por vulnerabilidades. Tom's Hardware lo confirmó revisando la página de Intigriti, que es la plataforma donde Intel alojaba el programa: el programa viejo aparece como suspendido, y el nuevo programa que Intel lanzó dice, textual, que es un programa de divulgación responsable sin recompensas. Sin plata. Intel no dio ninguna explicación.
+SK Hynix facturó 104,62 billones de wones, primera vez sobre los 100 billones en un trimestre. Según su comunicado, la utilidad operacional fue de 83,33 billones, un margen de 79,7 por ciento que la empresa redondea a 80. Ochenta. El consenso de FnGuide, que cita TrendForce, esperaba 98,23 billones en ingresos y 76,96 en utilidad. En dólares, CNBC con datos de LSEG habla de 78.860 millones, unos 78 billones de pesos. Zacks decía 73.900 millones, así que la cifra depende del tipo de cambio que se use.
 
-Para los que no cachan: un bug bounty es cuando una empresa le paga a investigadores de seguridad por encontrar y reportar vulnerabilidades en vez de venderlas en el mercado negro o publicarlas sin aviso. El de Intel partió en 2017 solo por invitación, se abrió a todo el mundo en 2018, y cubría hardware, firmware, software y los proyectos open source de Intel. Pagaba entre 500 y 100 mil dólares según la gravedad, que al dólar de hoy son entre 477 mil pesos y unos 95 millones y medio. Y no era decorativo: según cifras de la propia Intel que cita Tom's Hardware, en 2020 casi la mitad de las vulnerabilidades que Intel corrigió, 105 de 231, llegaron por ese programa.
+Samsung facturó 195,3 billones de wones y ganó 107,4 billones operacionales, la primera tecnológica en pasar los 100 billones de wones de utilidad en un trimestre. SamMobile lo pasa a unos 80.500 millones de dólares, cerca de 80 billones de pesos.
 
-Entonces, ¿por qué cortarlo? Intel no dice, así que lo que sigue es hipótesis, de Phoronix primero y mía después: la inteligencia artificial. El kernel de Linux y otros proyectos open source están recibiendo una avalancha de reportes de seguridad generados con modelos de lenguaje, muchos duplicados o basura. Tom's Hardware menciona que los CVE del kernel se acercan a los 2.000 por versión, que Torvalds ha dicho que los reportes duplicados hechos con IA son casi imposibles de manejar, que curl cerró su bounty por lo mismo, y que el Internet Bug Bounty de HackerOne pausó postulaciones en marzo. Expandir descubrimiento también significa expandir ruido.
+Pero lo que importa para nuestro hilo es la guía. SK Hynix dice que sus contratos de largo plazo ya cubren más de la mitad de su capacidad planificada de 2027 y de 2028, con 14 clientes firmados, cuando eran 10 el trimestre pasado. Según Chosun Biz, citado por TrendForce, la DRAM y la HBM estarían en la práctica vendidas hasta 2029, y el resumen de la propia sala de prensa de SK Hynix habla de escasez hasta 2030.
 
-A mí me parece que Intel está resolviendo el problema equivocado. Si te llegan mil reportes basura, la solución es filtrar mejor y pagar más por los buenos, no dejar de pagar. Porque el que encuentra una vulnerabilidad real en el microcódigo de un Xeon no va a trabajar gratis. Va a ir a otro lado, y el otro lado, en seguridad de hardware, no es un lugar bonito.
+En Samsung, según el resumen de la llamada que publica BigGo, la HBM de 2027 ya está vendida y lo apretado sigue hasta 2028. Eso viene de un resumen de terceros, no del comunicado oficial.
 
-Un dato que Tom's Hardware deja caer: la página de AMD en Intigriti también aparece suspendida, aunque la plataforma tiene suspensión automática, así que ahí no afirmo nada. Si AMD confirma, esto deja de ser un problema de Intel y pasa a ser tendencia de la industria.
+Un matiz, para no ser tremendista: TrendForce reportó el 28 de octubre que los precios spot de NAND vienen cayendo, con el TLC de 512 gigabits bajando 9,19 por ciento, por descuentos de celulares en China. Es spot, no contrato, así que todavía no da para decir que la tendencia se dio vuelta.
 
-Consejo no pedido para Intel: publiquen por qué. Si es la avalancha de reportes con IA, díganlo, cobren una fianza simbólica por reporte que se devuelve si es válido, y sigan pagando. Cuesta menos que un solo Spectre nuevo.
+Y la ironía de la semana: la división de celulares y electrodomésticos de Samsung perdió 0,8 billones de wones, en parte por lo caro de la memoria. Samsung se está cobrando a sí misma.
 
-[NOTICIA 5: Mojo 1.1 abre su compilador a la comunidad]
-Y ya que estamos hablando de open source, una corta para los programadores.
+Ahora el ángulo EUV. Según DigiTimes, el 28 de octubre SK Hynix dijo que va a estirar su celda DRAM 6F² usando EUV, y deja la 4F² y la DRAM 3D en carpeta.
 
-El 17 de septiembre salió Mojo 1.1 junto con MAX 26.6, y lo reportó Phoronix. Mojo, para los que no lo tienen en el radar, es el lenguaje de Modular, la empresa que fundó Chris Lattner, el mismo de LLVM y Swift, pensado para escribir código de alto rendimiento y kernels de GPU con una sintaxis que se parece a Python.
+Explico: F es la dimensión mínima del proceso. Una celda 6F² ocupa seis de esos cuadraditos; una 4F² ocupa cuatro, porque para el transistor de forma vertical. Queda en dos tercios del área, pero es mucho más difícil de fabricar. Micron, el 21 de octubre, la sacó de su roadmap.
 
-Lo nuevo en esta versión: referencias a miembros inferidas, tiempos de compilación mejores, código generado más rápido, y más partes de la librería estándar declaradas estables, incluyendo el tipo SIMD, que es justamente lo que usas cuando quieres exprimir un procesador moderno. Y del lado de MAX, que es el motor de inferencia de la misma empresa, los kernels corren más rápido en GPU tanto de AMD como de NVIDIA, y agregaron generación de audio con un modelo llamado MiniMax-Music3.
+¿Y la EUV? Con litografía DUV, para dibujar las líneas más finas hay que exponer la misma capa varias veces, y cada pasada agrega pasos y defectos. La EUV lo hace en una, y eso permite seguir achicando la celda clásica sin inventar arquitectura nueva.
 
-Pero la noticia real, para mí, es una línea: el compilador de Mojo ahora acepta contribuciones de la comunidad. Hasta ahora podías usar el lenguaje, pero el compilador era cosa de Modular. Que abran esa puerta es la diferencia entre un lenguaje que es un producto y un lenguaje que puede sobrevivir a la empresa que lo creó. Si a ustedes les gusta meter mano en compiladores, ahí hay una oportunidad real de aparecer en un proyecto que importa.
+Mi opinión: un 80 por ciento de margen no dura para siempre, pero mientras digan "vendido hasta 2028 o 2029", no esperen DDR5 barata.
 
-[CHILE: Data centers, ley de datos y una tesis USM en GPU]
-Y ahora lo de acá, que esta semana, aunque fue de fonda, trajo cosas.
+[NOTICIA 3: Intel se compra Classiq y apuesta por lo cuántico]
 
-Partamos por los data centers, que se están volviendo el tema fijo de este bloque. Tres en la semana. Uno: el miércoles 16 el OLCA, el Observatorio Latinoamericano de Conflictos Ambientales, acusó de ilegal la petición con la que Google busca revivir su data center de Cerrillos, según DPL News; ese proyecto, de unos 200 millones de dólares según Logística 360, Google lo está tratando de reactivar desde principios de mes. Dos: BNamericas reportó el 16 que Metlen Energy and Metals pidió conexión a la red para un centro de datos de 100 megawatts en Chile, que es del orden de una ciudad chica prendida las 24 horas. Tres: La Tercera reportó el 17 que la española Grenergy quiere levantar uno en Polpaico por 25 millones de dólares, unos 24 mil millones de pesos. En los tres casos tengo el titular y no el detalle, así que ahí lo dejo.
+En fin, pasemos a algo que Intel anunció tres días antes del batacazo. El lunes 26 de octubre firmó un acuerdo definitivo para comprar Classiq, una empresa israelí de software para computación cuántica. Confirmado por Intel. Y como es una compra de una empresa de nuestra lista, entra sí o sí.
 
-Y una conexión con el mundo: el 16 NVIDIA, Google y Emerald AI lanzaron la alianza AEMA, para que los data centers de IA bajen su consumo cuando la red está estresada, a cambio de conectarse más rápido. Yo creo que es justo la conversación que Chile necesita antes de aprobar 100 megawatts detrás de otros 100: no es solo cuánta energía usan, es si la sueltan cuando la red lo necesita.
+¿Qué hace Classiq? Sintetiza algoritmos cuánticos. Piensen en un compilador: uno describe a alto nivel lo que quiere calcular y la plataforma arma el circuito de compuertas cuánticas optimizado para el hardware que haya debajo, sea cual sea el tipo de qubit.
 
-Regulación. Sobre la ley 21.719 de protección de datos hay una postergación de la entrada en vigencia dando vueltas: La Tercera hablaba de una prórroga el 8 de septiembre y El Ecosistema Startup tituló el 19 que se posterga hasta 2027. No logré verificar el estado del trámite ni la fecha, así que lo dejo en titular y con advertencia: si trabajan con datos de clientes, no usen esto de excusa. De la ley marco de ciberseguridad y la ANCI no encontré novedad fechada, así que no la inflo.
+Intel, por su lado, apuesta por qubits de espín en silicio, que se fabrican con procesos parecidos a los de un transistor normal. La idea es juntar las dos cosas y tener la torre completa, del chip al software. Intel promete mantener el soporte de Classiq para hardware de otros.
 
-Conectividad, dos cortitas. Subtel instruyó a las operadoras reforzar las redes para el 18, con revisión de nodos troncales, autonomía energética y el sistema de alerta de emergencia. Y Megatiempo publicó el sábado que el cable submarino entre Arica y Puerto Montt ahora se usa para detectar sismos. Solo tengo el titular, pero usar la fibra como sensor sísmico distribuido es de las aplicaciones más bacanes que se le puede dar a un cable que ya está tendido.
+El monto: el comunicado no lo dice. Calcalist reporta 2.300 millones de dólares en efectivo y acciones, unos 2,3 billones de pesos. El 10-Q que Intel presentó a la SEC habla de una compra por cerca de 1.900 millones, sujeta a los ajustes de precio habituales y pagable en efectivo o en acciones. Ojo, ese fragmento no nombra a Classiq. Y según Globes, si se descuentan unos 100 millones que Classiq tiene en caja, el precio efectivo queda en unos 2.200 millones. No cuadran, y no sé cuál es la buena. Puede ser la diferencia entre el valor total y una parte del pago, pero eso es especulación mía. El cierre se espera para el primer semestre de 2027.
 
-Astronomía: un estudio dirigido por la Universidad Diego Portales confirmó el exoplaneta más joven que se conoce, Elias 2-24 b, un gigante gaseoso con menos de un millón de años. La Tierra tiene cuatro mil quinientos millones. Un recién nacido, confirmado con ciencia hecha desde acá.
+Y acá viene lo que me hace levantar la ceja. Según Calcalist y Ynet, Lip-Bu Tan era inversionista personal de Classiq desde antes de ser CEO de Intel. PostQuantum, citando a Calcalist y a fuentes cercanas a Classiq, dice que Tan se apartó de las discusiones sobre la compra.
 
-Y cerramos con la USM. El 16 la universidad informó que se adjudicó cuatro proyectos en el concurso VIU 2026 de ANID, el que financia emprendimientos que nacen de tesis y memorias, y quedó cuarta a nivel nacional; el proyecto UNTA-Tech, de la egresada Allison Lizana, sacó el puntaje más alto del concurso. Ninguno es de informática, pero si están terminando la memoria, anoten que el VIU existe.
+No digo que haya algo ilegal. Pero cuando el CEO compra con plata de la empresa una startup donde él tiene acciones, el directorio tiene que explicar harto.
 
-Y una que es contexto porque pasó justo antes de la ventana, el 11 de septiembre, pero no la puedo dejar pasar: Daniel San Martín, del Doctorado en Ingeniería Informática de la USM, ganó el primer lugar del concurso latinoamericano de tesis doctorales del CLEI 2026, en Ciudad de México. La tesis, dirigida por el profesor Claudio Torres, es un modelo simplificado de la interacción entre la atmósfera y un incendio forestal, implementado en CPU y en GPU, que captura la dinámica del fuego con tiempos de ejecución mucho menores que los modelos complejos. Hardware aplicado a un problema que acá nos quema todos los veranos. Felicitaciones al Daniel y al departamento.
+Mi consejo no pedido para Intel: si van a gastar entre 1.900 y 2.300 millones en cuántica la misma semana en que dicen que el PC cae 12 por ciento, muestren un plan de ingresos con fechas. No basta con decir "full-stack".
+
+[NOTICIA 4: El caso Megaspeed salpica a Jensen Huang]
+
+Y ya que estamos con empresas que tienen que dar explicaciones, volvamos al hilo de las GPUs y China. La semana pasada quedamos con 32 B300 detectadas en una red ligada a China Telecom.
+
+Lo nuevo: el jueves 29 de octubre el New York Times publicó que agencias de inteligencia de Estados Unidos concluyeron que Alice Huang, ejecutiva de Megaspeed, una empresa de data centers con base en Singapur, le pasaba información a Beijing, y que había desarrollado una relación cercana con Jensen Huang. No son parientes.
+
+Según el Times, Trump fue informado hace cerca de un año y no se hizo nada, y Jensen nunca recibió una advertencia formal. Megaspeed, además, ya había sido sospechosa de ayudar a esquivar los controles de exportación.
+
+Estatus: es un reportaje con fuentes anónimas. No hay acusación formal ni prueba pública de que se haya filtrado algo.
+
+Las respuestas sí son oficiales. NVIDIA dijo que las conversaciones de Jensen con ella son normales, que los clientes regionales reciben información comercial común, y que las acusaciones de desvío de chips contra Megaspeed se investigaron y se descartaron el año pasado. Jensen le dijo a Bloomberg que la relación fue normal y que revisaron cómo usaba los chips.
+
+El viernes 30, la cancillería china dijo que eran especulaciones sin fundamento. Y la senadora Elizabeth Warren le pidió respuestas a Jensen y al directorio.
+
+Una corrección para el historial del canal. Habíamos dicho que el juicio de Wally Liaw, de Super Micro, era el 2 de noviembre. No: según Fortune, en agosto se postergó a marzo de 2027. Y según Bloomberg, el 8 de octubre el "fixer" del caso, Willy Sun, se declaró culpable en un acuerdo con la fiscalía. Eso se nos pasó, y como es de antes de la ventana, va como contexto.
+
+Para mí, el punto no es si Jensen hizo algo malo, porque no hay evidencia de eso. El punto es que NVIDIA lleva meses diciendo que el contrabando es marginal, y cada semana aparece otro caso ligado a nubes del sudeste asiático.
+
+Consejo: publiquen una auditoría externa de dónde están físicamente sus GPUs. Mientras respondan con "se investigó y se descartó" sin mostrar cómo, nadie les va a creer.
+
+[NOTICIA 5: Linux 7.4-rc1 llega con la ventana más grande]
+
+Y para cerrar lo internacional, algo más nerd. Salió Linux 7.4-rc1, a tiempo, y con eso se cerró la ventana de fusión de dos semanas.
+
+Según Phoronix fue la ventana más grande de la historia del kernel: 19.671 commits desde Linux 7.3, contra 16.267 en la ventana de la 7.3 y 14.395 en la de la 7.2. Torvalds, en el anuncio de la rc1, habló de casi 20 mil commits cuando lo normal ronda los 15 mil. El árbol de fuentes quedó en 41.605.120 líneas.
+
+Lo que trae para ustedes: el driver AMDGPU activa por defecto el modo de HDMI 2.1, que es el que permite 4K a tasas de refresco altas por HDMI. Queda lista la base para los Ryzen Zen 6. Llega una función de AMD llamada PerfOpt para que las gráficas integradas Radeon rindan más con modelos de lenguaje. Intel suma soporte de cámara IPU8 para notebooks Nova Lake, hay soporte inicial para el Apple M4 y llega el Tensor G5 de Google.
+
+Phoronix también reporta mejoras de rendimiento bien locas en FAT32, de hasta 265 veces, y en el asignador de memoria del arranque temprano, que pasa de unos 268 segundos a unos 50 milisegundos.
+
+Phoronix cree que esta será la versión LTS del año y que la estable llega cerca del 20 de diciembre. En la nota escribieron "Linux 7.8" donde claramente querían decir 7.4; error de tipeo, no se asusten.
+
+Mi opinión: 20 mil commits en dos semanas es harto para revisar. En el episodio pasado vimos drivers EDAC sacados por la avalancha de parches hechos con IA. Mi especulación es que parte de este récord viene de ahí, y la pregunta es si los mantenedores dan abasto. Más volumen no es lo mismo que más calidad.
+
+[CHILE: 636 personas jugaron el primer CTF nacional]
+
+Y ahora, para la casa.
+
+El hilo de la ANCI se mueve con algo concreto. El 29 de octubre se hizo el primer Ejercicio Nacional de Ciberseguridad, el CTF que les anunciamos. La ANCI ya publicó cifras, recogidas por Veredictum el 30 de octubre.
+
+Hubo 1.047 inscritos válidos, pero jugaron 636 personas, organizadas en unos 400 equipos. 321 equipos resolvieron al menos un desafío, y solo 21 resolvieron los 12. La plataforma la implementó Hackrocks, con apoyo del BID, y el puntaje dependía del tiempo y de cuántas pistas pedían.
+
+Para el que nunca ha jugado uno: en un CTF, capture the flag, cada desafío esconde una "bandera", un texto que solo sacas si explotas la vulnerabilidad, le haces ingeniería inversa al binario o encuentras el dato escondido. Es de las formas más honestas de medir habilidad práctica en seguridad, porque no se puede chamullar.
+
+Mi lectura: 636 personas para un primer ejercicio está bien. Pero casi 4 de cada 10 inscritos no se presentaron, y eso hay que mirarlo. Que solo 21 equipos sacaran todo dice que el nivel era exigente, y eso me parece bacán.
+
+Lo que falta: la ANCI no publicó resultados por tipo de participante. Ese es el dato bueno: ¿cómo le fue al sector público contra las universidades? Si la USM o cualquier otra quiere sacar pecho, que publique cómo le fue. Y el ejercicio es anual por ley, así que los que se quedaron afuera tienen revancha en octubre de 2027.
+
+Una sola línea de contexto: según El Mercurio, el 26 de octubre el Ministerio de Energía proyectó que la demanda eléctrica de los data centers se cuadruplica hacia 2030. Es una proyección, no un proyecto aprobado, así que no le doy más que esta frase.
+
+Y de convocatorias de ANID o Corfo con cierre en los próximos 14 días, esta semana no logré verificar ninguna nueva. Prefiero decirles eso a inventarles una.
 
 [CIERRE]
-Y eso fue la semana. Si les sirvió, suscríbanse y activen la campanita, que la próxima semana tenemos mediación de Micron el lunes y resultados el 30, así que la crisis de memoria va a seguir dando que hablar.
 
-Nos vemos en el próximo episodio. Chao.
+Eso fue todo por esta semana. Si les sirvió, suscríbanse y activen la campanita para que no se les pase el próximo episodio, que viene con los resultados de AMD.
+
+Nos vemos, y cuiden esa RAM, que vale oro.
 
 ---
 
 FUENTES
-- Reuters, exclusiva: SK hynix en conversaciones con Intel para fabricar memoria en Estados Unidos, 2026-09-16, https://news.google.com/rss/articles/CBMi0AFBVV95cUxOVW1TN09JajVCZlllYVppOUxpX1RKbnVZOEpHNlA5ZkxFaElCd3h2czNacjJ6QlRyM2NPM1A4Y2tUVmNUTzlRSVJhX29oUk9ZTjFnYjFLOE9NWm5jaTVGOWo1Mnc1VHBOMTRKYXR0NURtUlltQV9ZVlgybWNSWmlDbjdVOGxLTTRlWFhGcUNNcjhYZXA2Q3BocGFpUF9sZXhYdXNURk5CVkZ2UVptUlUxOVQ1UmdOY1RUT2FvZDVBQ2EtNWRRbnpaMHlEYl9XQ2Ny?oc=5
-- TechPowerUp, Intel y SK hynix podrian iniciar produccion de DRAM en Estados Unidos, 2026-09-16, https://www.techpowerup.com/352753/intel-and-sk-hynix-could-start-dram-production-in-united-states
-- SK hynix Newsroom, aclaracion oficial sobre el reporte de conversaciones con Intel, 2026-09-16, https://news.skhynix.com/en/fact-10/
-- Korea JoongAng Daily, SK hynix evalua arrendar fabrica de Intel en Ohio en medio de presion de Washington, 2026-09-16, https://www.koreajoongangdaily.com/business/sk-hynix-weighs-ohio-factory-lease-amid-investment-production-push-from-washington/12878628
-- Stock Titan, 6-K de SK hynix negando conversaciones para comprar el campus de Intel en Ohio, 2026-07-22, https://www.stocktitan.net/sec-filings/SKHY/6-k-sk-hynix-inc-current-report-foreign-issuer-51b8f872744b.html
-- Techzine, SK hynix niega acuerdo con Intel sobre produccion de memoria en Estados Unidos, 2026-09-18, https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSXZveG5lbF9jN0FCLXplWHFfc3kzemZHOWZFM2t6UGFuLXJ2OW5EVmlhaldBMlJsV2ljOV9xbFdGN1dYQXRzdC1XM1VGMHM3bXN3NktUNkE3ZnZpdU56b1AtUjRQTk0zcHBRSy1oMWYzV1VUc0kyQ2hfQmVjVDUxLXI2X3NGVGZCYTVCOEU3ZmVHczByRWxzcjhLRUtlelJEVDFaVW5GV3p1bnc?oc=5
-- 24/7 Wall St, Intel sube 8 por ciento y SK hynix 5 por ciento mientras se reactivan las conversaciones de Ohio, Micron sube 6, 2026-09-17, https://news.google.com/rss/articles/CBMivAFBVV95cUxPbWF6WXlVbU5mUmd2cnZjb0N5X2ZHX0VHdHE5aW5IYmE5MDZOeDg1RHZ1ei1JOEJaTnZTNUJ3YlpNZ1dySE00WmJlTXZjdHhtOG1Ia2RXcmdqeWpVWTM4ZmI1ZnYyODI4d2lrdUhYWXpnMUM3T21WUmhHaTVXZ0FMN3R2blJpQ1hTVXhTUWttYkx1ZjdvWng5all6cTFsYk9ueHgwaEgtZnZMZTFFbGFvc1RweERpTnp6N2c5Tg?oc=5
-- 24/7 Wall St, Intel sube 4 por ciento y SK hynix 3 por ciento por reportes de conversaciones para fabricar memoria en Ohio, 2026-09-16, https://news.google.com/rss/articles/CBMi6gFBVV95cUxQNHNndVNsMGRvaTdjQUhEMUhwMGxCa0J6VWpjSmFSLThlVXRRRkVhY254NXlZdkpOR0VPSnJKR01SNmZOSGFRSE1ONTgxWk9nLWRZT0VDZEMxRjFGTWxncm1ETFhnNkZJYmxjT28yazhmeDZpUFZOaERlYnRJSmMwQmMzVFBjcElXTHExbFllV0k0d3RWOG9pRks3UmVZUlNtSFFYaVZ4SzVGTHJTay1HUW9JYWMtMkdCYm1fNGlkWnVZYnFXdW5pR01mcGdlR18takFxQk9udVhIdW1NVXYzQjZnT1NWWi1SM2c?oc=5
-- Bloomberg, SK hynix cierra acuerdo con su sindicato para pagar la mitad de los bonos en efectivo, 2026-09-16, https://www.bloomberg.com/news/articles/2026-09-16/chipmaker-sk-hynix-agrees-to-higher-cash-payout-to-ease-tensions
-- FinanceFeeds, DigiTimes reporta que Intel podria recortar otro 10 por ciento de personal, 2026-09-09, https://financefeeds.com/intel-intc-could-cut-another-10-of-staff-weeks-before-earnings/
-- Qualcomm Newsroom, Qualcomm anuncia colaboracion multigeneracional con Amazon para infraestructura de centros de datos de IA, 2026-09-08, https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-Announces-Multi-Generational-Product-Collaboration-with-Amazon-to-Build-Next-Generation-AI-Data-Center-Infrastructure/default.aspx
-- CNBC, Qualcomm emite warrants a Amazon por 4.000 millones de dolares en acciones como parte del acuerdo de infraestructura de IA, 2026-09-08, https://news.google.com/rss/articles/CBMijAFBVV95cUxNRV8zb0t6akRzdWkxb3lvRmxFUExhc2F2Tk5EOFJURTdfTzF2M2JZSXR2LU9EQVJSVXNwSVJWLTVpa2xXQVU4VlZjU21RZ2M1QmlKekd3cDJrUnhqVjBzLS0zVVRNeUU5dE5SMXRHV1RSVTN4MlBCWFlkWFRNTUxadWxOQ3JpZUh1N3JsU9IBkgFBVV95cUxOLVJPVjlLVVlKN20yWm5XbnpkbmV3X1VtQzdFazhVTld2cFpWVW92OUZlYjd6LUlRQmhDekI4X3NqN3JXY09ZMjJrTkc3dXMwdXFoT0pLc1RGbEFtVXpuY0ZlMHV2V0hSSzFOTUl1YlZJSkFzcjIxWGoyRlRUZ1VDV0ZjX1lDRk84elk5UWduaS0wUQ?oc=5
-- Reuters, Qualcomm cierra acuerdo de chips de IA con Amazon y le ofrece derecho a comprar unos 4.000 millones en acciones, 2026-09-08, https://news.google.com/rss/articles/CBMioAFBVV95cUxPZl80VFZ2VnoyVGhIdk1HaHpWdzVuTFZRNWdhdXBaU0JxMy1HY3d0aXV4bHZUNFIxSS1TMWVpVVM0UDZqWFlTY2VuZEFzaW40UzZmZGJ4d1d6emVGOHZ1em1ycUJSOUIxM05DN3NzNlJObXpmYTJaZ2JMOGp1bGNib20yZUZibDJTMjNvSnNvWVRseE5QT3o5OTVMV3NVUHFr?oc=5
-- Jon Peddie Research, Amazon apuesta 60 mil millones de dolares en Qualcomm, 2026-09-11, https://news.google.com/rss/articles/CBMidEFVX3lxTFBSR2twTnJNdWxFd2pZaTMzajh4dl9JdmFTMUlxa3JTa1Y4MVlFdzBrXzRiVWpreHBLX3ZSVkRXczRaT3FZbjROZ1VVUFdVdmdBUy1KRmRxNXlPRm9jQ2FTLWc4T0RxWENQcFk4T0lock5sSnJw?oc=5
-- Yahoo Finance, accion de Qualcomm: el acuerdo con Amazon alivia las preocupaciones por Apple, 2026-09-09, https://news.google.com/rss/articles/CBMinAFBVV95cUxOM3F5OFBNZHlwRE9ENzNGVnF0Y296UEMyYW90emp6dDBPSlJnaTdoQ3FWZXpLUDJnNk5tdXBLWXkyTERKWWtUdndzRnZlYmNDM2Y3YTlkMHpnZ1RpMzJ1R3hrOTFWbExCb2FlV1JBcTdmLTNUckxSaFJrdGZ1ZWhFS2trQS1fNURGWDF6dkdFUmctVjNzM2dVQXpBWUc?oc=5
-- Micron Newsroom, Micron demuestra el primer modulo DDR5 de 512 GB para servidores, 2026-09-15, http://investors.micron.com/news/press-release/2026/Micron-Advances-Memory-Innovation-With-the-Worlds-First-Ultra-Dense-Module-for-Next-Generation-Servers/default.aspx
-- Micron Newsroom, Micron nombra a Deirdre Hanford para dirigir Micron Research Labs, 2026-09-15, http://investors.micron.com/news/press-release/2026/Micron-Appoints-Deirdre-Hanford-to-Lead-Micron-Research-Labs/default.aspx
-- TechPowerUp, Valve dice que los planes del Steam Deck 2 no cambiaron pese a la crisis de RAM, 2026-09-15, https://www.techpowerup.com/352720/steam-deck-2-plans-havent-changed-despite-ram-crisis-claims-valve
-- Phoronix, Intel parece terminar su programa de bug bounty, 2026-09-18, https://www.phoronix.com/news/Intel-Bug-Bounty-Program-Ends
-- Tom's Hardware, Intel suspende el bug bounty que pagaba hasta 100 mil dolares por falla; el nuevo programa en Intigriti no ofrece recompensas, 2026-09-19, https://www.tomshardware.com/tech-industry/cyber-security/intel-suspends-bug-bounty-program-that-paid-up-to-usd100-000-per-flaw-new-intigriti-disclosure-program-offers-no-rewards
-- TechPowerUp, Intel termina su programa de bug bounty de 100 mil dolares, 2026-09-20, https://www.techpowerup.com/352872/intel-ends-its-usd-100-000-bug-bounty-program
-- Phoronix, Mojo 1.1 liberado, ahora acepta contribuciones de la comunidad al compilador, 2026-09-17, https://www.phoronix.com/news/Mojo-1.1-Released
-- DPL News, OLCA acusa ilegalidad en peticion de Google para revivir el data center de Cerrillos, 2026-09-16, https://news.google.com/rss/articles/CBMivAFBVV95cUxONFpuVTMtRC1VSzN4S193MDF3ZFRSNlZvaUhxSXpFVmZFaGFKaTIyT19MVzgzXzJreXhzMXpZM1RpMFNtdjJNOEVhenl3MFZRNGdPUl9JVkw1bmZGT2djaVhQaFI3TGxuRTU0UmNoUnVwMjBWeUJVS2h5Q1pWOGozWGRITWU3OG4tUTB0WlBrV1FERUI5dE12dzRQOXdhVm40VXZOd2lqcHhHX2tXb1lvTi1zVUg1ZGxXd2dfdg?oc=5
-- Logistica 360, Google busca reactivar su data center de 200 millones de dolares en Cerrillos, 2026-09-07, https://news.google.com/rss/articles/CBMioAFBVV95cUxPc091R01WbUZtZkJack9HRWk2Ujg1ZFJjSXBweHV1MVJobi1iRnJPcWwydmhFRURFclNCbzgzVlktdFBxbGVzejRlTExodV9yU2Z3dk9ESi1CUlhLRzBWWkVjekhkV1Q5OTh1Z2dqOVdLUUVVZ096aG42WklwN2dFTm1pUkUteFJWX0RjclpNY2lvTXhrQ3ZkTGJfUTAtSUc3?oc=5
-- BNamericas, Metlen Energy and Metals solicita conexion a la red para un centro de datos de 100 MW en Chile, 2026-09-16, https://news.google.com/rss/articles/CBMizAFBVV95cUxOUDU4cEczNW9Da1lZSGJHa2l1a1M4QmFiRUJsM01XaUg3bnpBN1RYZy1ycDlic0JnSU5rS0FGeUdJRF8xckhWbmJHSTJ5UlJpYlRZLUc4dEtNV1E0Sm1rSVY5NlFwYkRhOXZqVmZ6QjlwNkhkNWV3M2dxajZqRGN6elI2M3VTWE00b0JZUDdRNllWVnlGc2tJTXFkcHFublk3SGhiU0t1UmVXWTdDVWlETlpLalM5OXJ6dzkxdjhFRjV2Mnp1RXBraURvNGU?oc=5
-- La Tercera, la espanola Grenergy busca construir un data center en Polpaico por 25 millones de dolares, 2026-09-17, https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRWk2aDQ4ZFF2YkhzaWR1bVBWakxoUHVvR1Rvel9oT3lUZENLeHhaZ29sSDVMM0FjRXJUMk0yS1NUNC1XRkZtWXh6YkRpYVo5RldpSC1lZ0RhMm9LSy15VGM2YkxJMXJTa0FfWUxSTDU0Zkl4aEsyNFlpSG5TNnJhd29uR0NpdV9PWGlWb1daM2ZCLXNPWU9kQW43QkpXb2U2M21wRnV0dVZVb01UZzc2WlNsOGtmR0VzaGxF0gHcAUFVX3lxTE5XaDFickRDemdQZmg4WU1BX2xQQ2NsU1FKVUdLazROYU42OWVBUzIwcHpXWHZYM2RHNm5rQmF6T2daREFTMm1POTZkdWg1ckpNWG01dElIazQ1Y3BTd3hHZVloTjBYUHVzaFZLbmtCcXlEVmc4enk4c0VYOU9GWUh6aU9tX2E0Y0thbkZQSHVrWlNsLTVMNU5FdVMxbEdnaGh5N1FEb1BoSTJyZGdyXzZwaXE4aFpxWU5nX0ZHRXc5VWU1aTJOYkQ0THpBeEhiU0E4cDZtcDZJZnFtWnc?oc=5
-- NVIDIA Newsroom, Emerald AI, Google y NVIDIA lanzan alianza para data centers de IA flexibles, 2026-09-16, https://blogs.nvidia.com/blog/ai-energy-management-alliance
-- La Tercera, prorroga a la ley de proteccion de datos personales, 2026-09-08, https://news.google.com/rss/articles/CBMimAFBVV95cUxOcUpPanBXeDBfTk43eklXTl9aVnBEc0tkQWVKLXdyWFF0dk5Uak1jRnNrekE4YlZCd19NWkxqQkxNb1QyZVppSmt6UDl3TzBTYVlVUm5QSFFJdk04QjJOWE9ibGVMbUJXOXFuNjJDQVlaMV9sWjRLLS1yQ1lpQ1h1S0pNcUUxS3RxZmwxLTdBN1VMYlp1cXpYSNIBugFBVV95cUxNUVNjZjlBZS1GWWY5U2pkbkplTlN0SGRqV3UtVEdrSjd6c2dWTk8zZmFvYXVIUFFkYnZiRjg2UFpRTV90WlZsLUh1TnFicm9OTU1fTTYzS2MwT2xRc2N4ZzZvTldXXzN2MGJLcEx3Z3hORUItMFRQWjJLNEZnNDltMDhVTUk1RlluWHBELVl5RnZvRlNEZWN6aXdkRmRaTkdjczJlR3I0MXBtaDdjNXZMa3YyUFhvbHdfY0E?oc=5
-- El Ecosistema Startup, ley de proteccion de datos en Chile: postergan hasta 2027, 2026-09-19, https://news.google.com/rss/articles/CBMikAFBVV95cUxNZXMxNkxSS2RmZXQ0eFAzZzBxMVpIVFNnVUYwV0pSNUIzanVNSWVqSmd4SUU1UHhfMERTVHFEVkF6WFVYd2xVbzNIbWowRlJMVWJ4RGFGRTZFYjZWSDJvUnZIVEJmOWJ6LXZrNXRJdi1IQzRJZ19MMHpzWFJsbTNucU5wMjJWNnF4LVBsOElIaUI?oc=5
-- Subtel, Subtel instruye a empresas reforzar las redes para Fiestas Patrias y despliega campana de autocuidado, 2026-09-16, https://www.subtel.gob.cl/subtel-instruye-a-empresas-reforzar-las-redes-para-fiestas-patrias-y-despliega-campana-de-autocuidado-y-seguridad-digital
-- Megatiempo, el cable submarino entre Arica y Puerto Montt que ahora sirve para detectar sismos, 2026-09-19, https://news.google.com/rss/articles/CBMilgFBVV95cUxNeTlhckkzb2g3dGNEMGhCYzdDYk5vR3pZRmgxUExLRkVRaU5pUFBTcU1IYnF4QmtWazVTYm8xWmI1b05rQVRpZWstZzhfSUlGeVhkSFFETUU1b1JYLUNhWmdDX0JSV2J1VTNaYUtWeXlQQnlwWG0zWk00UkZGc2pkdTZacUxJa0VxSGZMWGppWk9lSHFvTEE?oc=5
-- Megatiempo, estudio dirigido por universidad chilena confirma el hallazgo del exoplaneta mas joven conocido, 2026-09-18, https://news.google.com/rss/articles/CBMijAFBVV95cUxQb0U1Szdpa3Z1d0VXXzIwZ1d1UFZOOE4tUUhybWZqcjVnWnphYkRzMDc4WmhDRUxvVE5CeFBHbm5QMnNYQzZRQ0Q1LVMweDE3M1gzU29Ic3JxZnFFc245Nm9PZ1duVnBTdl9sUHRzYVBCUEpuWS0xTVNfdHB0YUhabE9MS0w1NlJIUm13Vg?oc=5
-- Merca2, confirman el planeta mas joven: Elias 2-24 b tiene menos de un millon de anos, 2026-09-17, https://news.google.com/rss/articles/CBMifEFVX3lxTE1JQUVoaG9VLTZhN1RiV3duR0lqOVEzdldOQTFWRzdoTnpXcF9jSGYtdjM4ZjdNLUVIal96eW5jZ21HNzBaU2YyaW9PYU1EMjY0Y0RpU0Q2XzRmWFJPT0t6OW01SEFrQkFuNVp3NDNnb2Fqb1hzajBhT3ZjdXc?oc=5
-- USM, USM se adjudica cuatro proyectos en concurso VIU 2026, 2026-09-16, https://usm.cl/noticias/usm-se-adjudica-cuatro-proyectos-en-concurso-viu-2026-y-se-posiciona-entre-las-universidades-lideres-a-nivel-nacional
-- Informatica USM, investigacion doctoral de Daniel San Martin obtiene reconocimiento en CLEI 2026, 2026-09-16, https://informatica.usm.cl/noticias/premio-clei-daniel-san-martin
+
+- Intel reporta su tercer trimestre de 2026 (comunicado, formulario 8-K), SEC, 29 de octubre de 2026, https://www.sec.gov/Archives/edgar/data/0000050863/000005086326000188/q326earningsrelease.htm
+- Formulario 10-Q de Intel del trimestre terminado el 26 de septiembre de 2026, SEC, 2026, https://www.sec.gov/Archives/edgar/data/0000050863/000005086326000191/intc-20260926.htm
+- Transcripción de la llamada de resultados Q3 2026 de Intel, The Motley Fool, 30 de octubre de 2026, https://www.fool.com/earnings/call-transcripts/2026/10/30/intel-intc-q3-2026-earnings-call-transcript/
+- La acción de Intel se desploma y golpea la participación del gobierno, TechCrunch, 30 de octubre de 2026, https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/
+- Intel cae 25% y arrastra a Dell, AMD y NVIDIA, 24/7 Wall St, 30 de octubre de 2026, https://247wallst.com/investing/2026/10/30/intel-plunges-25-as-weak-outlook-and-pc-slump-overshadow-earnings-beat-dell-tumbles-13-amd-sinks-10-nvidia-falls-3/
+- Resultados Q3 2026 de Intel y cierre de la acción, MarketBeat, 30 de octubre de 2026, https://www.marketbeat.com/earnings/reports/2026-10-29-intel-co-stock/
+- La crisis de memoria golpea la demanda de chips de PC de Intel, Seoul Economic Daily, 30 de octubre de 2026, https://en.sedaily.com/international/2026/10/30/intel-shares-plunge-as-memory-crunch-hits-pc-chip-demand
+- Dólar observado diario, Banco Central de Chile, 30 de octubre de 2026, https://si3.bcentral.cl/Bdemovil/BDE/Series/MOV_SC_TC1
+- El dólar cierra octubre con su quinto mes al alza, La Tercera, 30 de octubre de 2026, https://www.latercera.com/pulso/noticia/el-valor-del-dolar-en-chile-el-30-de-octubre-de-2026/
+- SK hynix anuncia sus resultados 3Q26, SK hynix Newsroom, 28 de octubre de 2026, https://news.skhynix.com/en/q3-2026-business-results/
+- SK hynix logra margen récord de 80% y dice que DRAM y HBM están vendidas hasta 2029, TrendForce, 28 de octubre de 2026, https://www.trendforce.com/news/2026/10/28/news-sk-hynix-3q26-opm-hits-record-80-says-dram-hbm-effectively-sold-out-to-2029-14-lta-customers-signed/
+- ETFs y los resultados Q3 de SK Hynix (conversión a dólares), Yahoo Finance / Zacks, 2026, https://finance.yahoo.com/markets/stocks/articles/etfs-focus-sk-hynix-reports-145800137.html
+- Samsung Electronics anuncia sus resultados del tercer trimestre 2026, Samsung Newsroom, 29 de octubre de 2026, https://news.samsung.com/global/samsung-electronics-announces-third-quarter-2026-results
+- Samsung gana 80.500 millones de dólares gracias a la memoria, SamMobile, 2026, https://www.sammobile.com/news/samsung-record-breaking-profit-usd-80-5-billion-q3-2026
+- Resumen de la llamada de resultados Q3 2026 de Samsung, BigGo Finance, 29 de octubre de 2026, https://finance.biggo.com/news/KR_005930.KS_2026-10-29
+- SK Hynix apuesta por EUV para extender la DRAM 6F², DigiTimes, 28 de octubre de 2026, https://www.digitimes.com/news/a20261028VL220/sk-hynix-dram-cxmt-euv-technology.html
+- Micron abandona la DRAM 4F², Tom's Hardware, octubre de 2026, https://www.tomshardware.com/pc-components/dram/micron-pulls-the-plug-on-future-4f2-dram-after-two-decades-of-research-in-dramatic-shift-company-says-architecture-offers-no-meaningful-density-advantages-increases-manufacturing-complexity-and-costs-and-has-fundamental-scaling-limitations
+- Actualización de precios spot de memoria: caen los de NAND, TrendForce, 28 de octubre de 2026, https://www.trendforce.com/news/2026/10/28/insights-memory-spot-price-update-nand-spot-price-cuts-accelerate-amid-china-phone-discounts-512gb-tlc-sink-9-19/
+- Intel comprará Classiq para crear una plataforma cuántica completa, Intel (sala de inversionistas), 26 de octubre de 2026, https://www.intc.com/news-events/press-releases/detail/1784/intel-to-acquire-classiq-to-create-a-full-stack-quantum
+- Entrevista al CEO de Classiq tras la compra por 2.300 millones, Calcalist, octubre de 2026, https://www.calcalistech.com/ctechnews/article/psr5mmhcl
+- Intel compra la israelí Classiq en una operación récord, Ynet, octubre de 2026, https://www.ynetnews.com/business/article/rkd8qnanme
+- Intel cifra en cerca de 1.900 millones la compra de Classiq según un documento, Newsquawk, 30 de octubre de 2026, https://www.newsquawk.com/headlines/intel-intc-says-it-entered-into-a-definitive-agreement-in-october-2026-to-acquire-100-of-classiq-technologies-for-approximately-usd-19bln-according-to-a-filing
+- Detalles del cierre esperado de la compra de Classiq, The Quantum Insider, 26 de octubre de 2026, https://thequantuminsider.com/2026/10/26/intel-to-acquire-classiq-to-create-a-full-stack-quantum-computing-platform/
+- NVIDIA responde al reportaje sobre un activo chino cercano a Jensen Huang, CNBC, 29 de octubre de 2026, https://www.cnbc.com/2026/10/29/nvidia-jensen-huang-chinese-intelligence-asset.html
+- Jensen Huang dice que su relación con Megaspeed fue normal, Bloomberg, 29 de octubre de 2026, https://www.bloomberg.com/news/articles/2026-10-29/nvidia-ceo-says-ties-to-company-under-spying-probe-were-normal
+- China rechaza el reportaje sobre espionaje contra Jensen Huang, Euronews, 30 de octubre de 2026, https://www.euronews.com/2026/10/30/china-rejects-report-of-spy-plot-targeting-nvidias-jensen-huang
+- Warren pide respuestas a NVIDIA tras el reportaje, Yahoo Finance, 29 de octubre de 2026, https://finance.yahoo.com/markets/stocks/articles/nvidia-ceo-jensen-huang-may-193307067.html
+- NVIDIA descarta el reportaje de espionaje, The Hill, 29 de octubre de 2026, https://thehill.com/policy/technology/6181938-nvidia-huang-china-intelligence-report/
+- Investigación interna de Supermicro y juicio de Liaw movido a 2027, Fortune, 20 de agosto de 2026, https://fortune.com/2026/08/20/supermicro-investigation-ceo-nvidia-smuggling/
+- El "fixer" del caso Super Micro se declara culpable, Bloomberg, 9 de octubre de 2026, https://www.bloomberg.com/news/articles/2026-10-09/super-micro-case-fixer-pleads-guilty-to-diverting-ai-servers
+- Sale Linux 7.4-rc1 con mejoras de rendimiento, Zen 6 y HDMI 2.1 por defecto en AMDGPU, Phoronix, noviembre de 2026, https://www.phoronix.com/news/Linux-7.4-rc1
+- La ventana de fusión de Linux 7.4 es la más grande de la historia, Phoronix, noviembre de 2026, https://www.phoronix.com/news/Linux-7.4-Massive-Window
+- La ventana de Linux 7.4 suma casi 20 mil commits y el árbol se acerca a 42 millones de líneas, Phoronix, noviembre de 2026, https://www.phoronix.com/news/Linux-7.4-Merge-Window
+- 636 personas compitieron en el primer Ejercicio Nacional de Ciberseguridad, Veredictum, 30 de octubre de 2026, https://veredictum.cl/ciberseguridad-636-compitieron-en-primer-ejercicio-nacional/
+- Primer Ejercicio Nacional de Ciberseguridad y carácter anual, Tour Innovación, octubre de 2026, https://www.tourinnovacion.cl/actualidad/primer-ejercicio-nacional-de-ciberseguridad-con-324-incidentes-significativos-en-seis-meses-las-empresas-tambien-deberian-ensayar-su-respuesta/
+- Ministerio de Energía proyecta que la demanda eléctrica de data centers se cuadruplicará hacia 2030 (El Mercurio), CPI, 26 de octubre de 2026, https://cpichile.org/proyecciones-y-desafios-ministerio-de-energia-proyecta-que-demanda-electrica-de-data-centers-se-cuadruplicara-hacia-2030/

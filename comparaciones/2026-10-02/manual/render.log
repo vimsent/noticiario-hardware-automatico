@@ -1,0 +1,108 @@
+[guion] 7 etiqueta(s) venían con markdown encima (## **\[..\]**): normalizadas
+[fuentes] se cortaron 776 palabras del guion (21% del total)
+[fuentes] sección de fuentes separada del guion → comparaciones/2026-10-02/manual/output/fuentes.md
+18 bloques detectados (2941 palabras, ~19.6 min) → comparaciones/2026-10-02/manual/output/bloques.json
+  [00] tarjeta  intro                                    ( 75 palabras)
+  [01] tarjeta  noticia_1_p1                             (200 palabras)
+  [02] tarjeta  noticia_1_p2                             (218 palabras)
+  [03] tarjeta  noticia_1_p3                             (184 palabras)
+  [04] tarjeta  noticia_1_p4                             (214 palabras)
+  [05] tarjeta  noticia_1_p5                             (207 palabras)
+  [06] tarjeta  noticia_1_p6                             ( 77 palabras)
+  [07] tarjeta  noticia_2_p1                             (215 palabras)
+  [08] tarjeta  noticia_2_p2                             (202 palabras)
+  [09] tarjeta  noticia_3_p1                             (208 palabras)
+  [10] tarjeta  noticia_3_p2                             (135 palabras)
+  [11] tarjeta  noticia_3_p3                             (211 palabras)
+  [12] tarjeta  noticia_4_p1                             (175 palabras)
+  [13] tarjeta  noticia_4_p2                             (144 palabras)
+  [14] tarjeta  chile_p1                                 (145 palabras)
+  [15] tarjeta  chile_p2                                 (219 palabras)
+  [16] tarjeta  chile_p3                                 ( 66 palabras)
+  [17] tarjeta  cierre                                   ( 46 palabras)
+[lint] aviso: 7 etiqueta(s) venían con markdown encima (## **\[..\]**); se normalizaron
+[lint] OK: 18 bloques, 2941 palabras (~20 min), 1 aviso(s)
+Audio: 00_intro.wav (edge)
+Audio: 01_noticia_1_p1.wav (edge)
+Audio: 02_noticia_1_p2.wav (edge)
+Audio: 03_noticia_1_p3.wav (edge)
+Audio: 04_noticia_1_p4.wav (edge)
+Audio: 05_noticia_1_p5.wav (edge)
+Audio: 06_noticia_1_p6.wav (edge)
+Audio: 07_noticia_2_p1.wav (edge)
+Audio: 08_noticia_2_p2.wav (edge)
+Audio: 09_noticia_3_p1.wav (edge)
+Audio: 10_noticia_3_p2.wav (edge)
+Audio: 11_noticia_3_p3.wav (edge)
+Audio: 12_noticia_4_p1.wav (edge)
+Audio: 13_noticia_4_p2.wav (edge)
+Audio: 14_chile_p1.wav (edge)
+Audio: 15_chile_p2.wav (edge)
+Audio: 16_chile_p3.wav (edge)
+Audio: 17_cierre.wav (edge)
+
+Listo en 114s: 18 bloques sintetizados, 0 desde caché.
+Duración total de narración: 17.4 min
+Manifest guardado en comparaciones/2026-10-02/manual/output/audio_manifest.json
+[intro] tarjeta de titular
+[noticia_1_p1] tarjeta de titular
+[noticia_1_p2] tarjeta cita (parte 2/6)
+[noticia_1_p3] tarjeta cita (parte 3/6)
+[noticia_1_p4] tarjeta cita (parte 4/6)
+[noticia_1_p5] tarjeta cita (parte 5/6)
+[noticia_1_p6] tarjeta cita (parte 6/6)
+[noticia_2_p1] tarjeta de titular
+[noticia_2_p2] tarjeta cita (parte 2/2)
+[noticia_3_p1] tarjeta de titular
+[noticia_3_p2] tarjeta cita (parte 2/3)
+[noticia_3_p3] tarjeta cita (parte 3/3)
+[noticia_4_p1] tarjeta de titular
+[noticia_4_p2] tarjeta cita (parte 2/2)
+[chile_p1] tarjeta de titular
+[chile_p2] tarjeta cita (parte 2/3)
+[chile_p3] tarjeta cita (parte 3/3)
+[cierre] tarjeta de titular
+
+Manifest guardado en comparaciones/2026-10-02/manual/output/visuals_manifest.json
+frame=   37 fps=0.0 q=-1.0 size=     256KiB time=00:00:19.52 bitrate= 107.5kbits/s speed=  39x    frame=   81 fps= 81 q=-1.0 size=    1024KiB time=00:00:40.83 bitrate= 205.5kbits/s speed=40.8x    frame=  125 fps= 83 q=-1.0 size=    1536KiB time=00:01:03.29 bitrate= 198.8kbits/s speed=42.2x    frame=  169 fps= 84 q=-1.0 size=    2048KiB time=00:01:25.65 bitrate= 195.9kbits/s speed=42.8x    frame=  223 fps= 89 q=-1.0 size=    2816KiB time=00:01:52.02 bitrate= 205.9kbits/s speed=44.8x    frame=  267 fps= 89 q=-1.0 size=    3328KiB time=00:02:14.59 bitrate= 202.6kbits/s speed=44.9x    frame=  319 fps= 91 q=-1.0 size=    3840KiB time=00:02:40.44 bitrate= 196.1kbits/s speed=45.8x    frame=  373 fps= 93 q=-1.0 size=    4608KiB time=00:03:06.88 bitrate= 202.0kbits/s speed=46.7x    frame=  429 fps= 95 q=-1.0 size=    5120KiB time=00:03:34.86 bitrate= 195.2kbits/s speed=47.7x    frame=  481 fps= 96 q=-1.0 size=    5888KiB time=00:04:00.66 bitrate= 200.4kbits/s speed=48.1x    frame=  532 fps= 97 q=-1.0 size=    6656KiB time=00:04:26.81 bitrate= 204.4kbits/s speed=48.5x    frame=  576 fps= 96 q=-1.0 size=    7168KiB time=00:04:49.62 bitrate= 202.7kbits/s speed=48.3x    frame=  624 fps= 96 q=-1.0 size=    7680KiB time=00:05:12.00 bitrate= 201.7kbits/s speed=  48x    frame=  669 fps= 96 q=-1.0 size=    8192KiB time=00:05:35.44 bitrate= 200.1kbits/s speed=47.9x    frame=  709 fps= 95 q=-1.0 size=    8704KiB time=00:05:56.37 bitrate= 200.1kbits/s speed=47.5x    frame=  757 fps= 95 q=-1.0 size=    9472KiB time=00:06:19.43 bitrate= 204.5kbits/s speed=47.4x    frame=  802 fps= 94 q=-1.0 size=    9984KiB time=00:06:42.24 bitrate= 203.3kbits/s speed=47.3x    frame=  850 fps= 94 q=-1.0 size=   10496KiB time=00:07:06.11 bitrate= 201.8kbits/s speed=47.3x    frame=  894 fps= 94 q=-1.0 size=   11008KiB time=00:07:28.23 bitrate= 201.2kbits/s speed=47.2x    frame=  938 fps= 94 q=-1.0 size=   11520KiB time=00:07:50.54 bitrate= 200.6kbits/s speed=  47x    frame=  986 fps= 94 q=-1.0 size=   12288KiB time=00:08:13.03 bitrate= 204.2kbits/s speed=46.9x    frame= 1032 fps= 94 q=-1.0 size=   12800KiB time=00:08:36.13 bitrate= 203.2kbits/s speed=46.9x    frame= 1080 fps= 94 q=-1.0 size=   13312KiB time=00:09:00.92 bitrate= 201.6kbits/s speed=  47x    frame= 1128 fps= 94 q=-1.0 size=   14080KiB time=00:09:25.86 bitrate= 203.8kbits/s speed=47.1x    frame= 1176 fps= 94 q=-1.0 size=   14592KiB time=00:09:49.84 bitrate= 202.7kbits/s speed=47.2x    frame= 1236 fps= 95 q=-1.0 size=   15360KiB time=00:10:18.24 bitrate= 203.5kbits/s speed=47.5x    frame= 1288 fps= 95 q=-1.0 size=   15872KiB time=00:10:44.24 bitrate= 201.8kbits/s speed=47.7x    frame= 1341 fps= 96 q=-1.0 size=   16640KiB time=00:11:10.65 bitrate= 203.3kbits/s speed=47.9x    frame= 1390 fps= 96 q=-1.0 size=   17408KiB time=00:11:35.40 bitrate= 205.1kbits/s speed=  48x    frame= 1438 fps= 96 q=-1.0 size=   17920KiB time=00:11:59.33 bitrate= 204.1kbits/s speed=47.9x    frame= 1490 fps= 96 q=-1.0 size=   18432KiB time=00:12:25.96 bitrate= 202.4kbits/s speed=48.1x    frame= 1541 fps= 96 q=-1.0 size=   19200KiB time=00:12:51.66 bitrate= 203.8kbits/s speed=48.2x    frame= 1593 fps= 97 q=-1.0 size=   19968KiB time=00:13:17.63 bitrate= 205.1kbits/s speed=48.3x    frame= 1641 fps= 97 q=-1.0 size=   20480KiB time=00:13:42.05 bitrate= 204.1kbits/s speed=48.3x    frame= 1692 fps= 97 q=-1.0 size=   20992KiB time=00:14:06.44 bitrate= 203.2kbits/s speed=48.4x    frame= 1744 fps= 97 q=-1.0 size=   21760KiB time=00:14:32.51 bitrate= 204.3kbits/s speed=48.5x    frame= 1797 fps= 97 q=-1.0 size=   22528KiB time=00:14:59.30 bitrate= 205.2kbits/s speed=48.6x    frame= 1845 fps= 97 q=-1.0 size=   23040KiB time=00:15:24.09 bitrate= 204.2kbits/s speed=48.6x    frame= 1895 fps= 97 q=-1.0 size=   23552KiB time=00:15:49.24 bitrate= 203.3kbits/s speed=48.7x    frame= 1943 fps= 97 q=-1.0 size=   24320KiB time=00:16:12.86 bitrate= 204.8kbits/s speed=48.6x    frame= 1995 fps= 97 q=-1.0 size=   24832KiB time=00:16:38.03 bitrate= 203.8kbits/s speed=48.7x    frame= 2038 fps= 97 q=-1.0 size=   25344KiB time=00:17:00.92 bitrate= 203.4kbits/s speed=48.6x    frame= 2087 fps= 97 q=-1.0 Lsize=   26516KiB time=00:17:22.00 bitrate= 208.5kbits/s speed=48.5x    
+[encoder] h264_nvenc (GPU)
+[video] 18 bloques, 17.4 min, 2087 frames @ 2 fps
+  [2/18] noticia_1_p1 (84.7s)
+  [3/18] noticia_1_p2 (75.1s)
+  [8/18] noticia_2_p1 (81.3s)
+  [10/18] noticia_3_p1 (76.6s)
+  [5/18] noticia_1_p4 (74.3s)
+  [9/18] noticia_2_p2 (73.9s)
+  [16/18] chile_p2 (73.9s)
+  [12/18] noticia_3_p3 (69.5s)
+  [15/18] chile_p1 (51.0s)
+  [13/18] noticia_4_p1 (69.7s)
+  [6/18] noticia_1_p5 (68.4s)
+  [4/18] noticia_1_p3 (61.8s)
+  [14/18] noticia_4_p2 (48.4s)
+  [1/18] intro (26.0s)
+  [7/18] noticia_1_p6 (25.8s)
+  [11/18] noticia_3_p2 (44.2s)
+  [17/18] chile_p3 (22.6s)
+  [18/18] cierre (16.4s)
+[música] pista elegida al azar: Memory System ｜ Ambient Swim ｜ Liquid DnB, Jungle, Breakcore [H1d_aEantvc].mp3
+[música] arrancando en el segundo 430 de la pista
+[música] ducking activo (threshold=0.05, ratio=8.0:1)
+[video] concatenando y mezclando audio...
+[youtube] 7 capítulos y registro de música → comparaciones/2026-10-02/manual/output/fuentes.md
+
+Video final: comparaciones/2026-10-02/manual/output/video_final.mp4
+
+$ /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/.venv/bin/python /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/scripts/parse_script.py comparaciones/2026-10-02/manual/guion.md comparaciones/2026-10-02/manual/output/bloques.json comparaciones/2026-10-02/manual/output/config_efectivo.yaml
+
+$ /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/.venv/bin/python /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/scripts/lint_script.py comparaciones/2026-10-02/manual/guion.md comparaciones/2026-10-02/manual/output/bloques.json comparaciones/2026-10-02/manual/output/config_efectivo.yaml
+
+$ /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/.venv/bin/python /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/scripts/generate_audio.py comparaciones/2026-10-02/manual/output/bloques.json comparaciones/2026-10-02/manual/output/audio comparaciones/2026-10-02/manual/output/config_efectivo.yaml
+
+$ /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/.venv/bin/python /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/scripts/generate_visuals.py comparaciones/2026-10-02/manual/output/bloques.json comparaciones/2026-10-02/manual/output/visuals comparaciones/2026-10-02/manual/output/config_efectivo.yaml
+
+$ /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/.venv/bin/python /home/vicente/Descargas/noticiario-hardware-fin/noticiario-hardware/scripts/assemble_video.py comparaciones/2026-10-02/manual/output/audio_manifest.json comparaciones/2026-10-02/manual/output/visuals_manifest.json comparaciones/2026-10-02/manual/output/config_efectivo.yaml
+
+✅ Pipeline completo.
+   Video:   comparaciones/2026-10-02/manual/output/video_final.mp4
+   Fuentes: comparaciones/2026-10-02/manual/output/fuentes.md  (para la descripción del video)

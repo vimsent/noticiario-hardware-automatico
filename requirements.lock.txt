@@ -12,7 +12,7 @@ csvw==4.1.0
 cycler==0.12.1
 decorator==5.3.1
 dlinfo==2.0.0
-edge-tts==7.2.8
+edge-tts==7.3.1
 espeakng-loader==0.2.4
 flatbuffers==25.12.19
 fonttools==4.65.0

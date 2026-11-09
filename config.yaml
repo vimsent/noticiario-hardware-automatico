@@ -76,7 +76,10 @@ parsing:
 ingesta:
   feeds_path: feeds.yaml
   db_path: data/noticias.db
-  user_agent: "noticiario-hardware/0.1 (+https://github.com/vimsent/noticiario-hardware-automatico)"
+  # formato "Mozilla/5.0 (compatible; ...)": es el mismo que usan Googlebot y Bingbot para
+  # identificarse sin mentir. Varios sitios chilenos (ej. anid.cl, cloudfront) bloquean con 403
+  # cualquier User-Agent que no empiece con "Mozilla/5.0", sin mirar el resto del string.
+  user_agent: "Mozilla/5.0 (compatible; noticiario-hardware/0.1; +https://github.com/vimsent/noticiario-hardware-automatico)"
   timeout_s: 20
   reintentos: 2
   req_por_seg_por_host: 1
@@ -119,11 +122,14 @@ ranking:
   embeddings: false            # reservado: agrupacion multilingue, no implementado
   max_grupos: 50
   max_grupos_chile: 35
+  max_grupos_prioritarios: 20     # cupo garantizado en candidatas.json para temas prioritarios
   max_articulos_con_texto: 3
   max_chars_texto: 6000
   # bloque_chile: bono para grupos es_chile que calzan con keywords_bloque_chile (los temas del
   # bloque Chile del prompt). No esta en la formula original de CLAUDE.md; con 0 se desactiva.
-  pesos: {medios: 3, comunidad: 2, evento_mayor: 4, oficial: 1, rumor: -1, bloque_chile: 2}
+  # tema_prioritario: bono para grupos que calzan con keywords_tema_prioritario (seccion TEMAS
+  # PRIORITARIOS de los prompts). Tampoco esta en la formula original; con 0 se desactiva.
+  pesos: {medios: 3, comunidad: 2, evento_mayor: 4, oficial: 1, rumor: -1, bloque_chile: 2, tema_prioritario: 3}
   prioridad_medios: [oficial, hardware, general, chile, comunidad]
   # Las keywords se comparan en minusculas y sin tildes sobre titulo y resumen.
   empresas:
@@ -228,6 +234,46 @@ ranking:
     - trascendio
   keywords_chile: [chile, chileno, chilena, chilenos, chilenas]
   # Temas del bloque Chile del prompt: suman pesos.bloque_chile y exportan tema_chile: 1.
+  # temas prioritarios del canal (seccion TEMAS PRIORITARIOS de los prompts): EUV, litografia
+  # avanzada, alternativas, China y su impacto en memoria. Sin tildes; la puntuacion cuenta como espacio.
+  keywords_tema_prioritario:
+    - euv
+    - high-na
+    - extreme ultraviolet
+    - ultravioleta extremo
+    - lithography
+    - litografia
+    # "asml" sola no: arrastra toda la cobertura bursatil ("why is ASML stock dipping"). Lo de ASML
+    # que importa calza igual por euv, high-na o lithography, y sus controles de exportacion ya son evento mayor.
+    - twinscan
+    - photomask
+    - photomasks
+    - fotomascara
+    - fotomascaras
+    - pellicle
+    - x-ray lithography
+    - litografia de rayos x
+    - free electron laser
+    - free-electron laser
+    - particle accelerator
+    - acelerador de particulas
+    - laser de electrones libres
+    - electron beam lithography
+    - e-beam lithography
+    - atom beam
+    - haz de atomos
+    - nanoimprint
+    - xlight
+    - smee
+    - sicarrier
+    # memoria china: su avance sin EUV (multi-patterning) es el otro lado del mismo tema
+    - cxmt
+    - changxin
+    - ymtc
+    - multi-patterning
+    - multipatterning
+    - quadruple patterning
+    - quadruple-patterning
   keywords_bloque_chile:
     - data center
     - datacenter
@@ -332,8 +378,19 @@ redaccion:
   #   --tools            limita el set disponible (sin Bash)
   #   --allowedTools     pre-aprueba esas herramientas para que no pidan permiso
   #   --permission-prompts none   lo que igual pediria permiso se niega en vez de colgar
+  #   --model / --fallback-model  Opus 5.5; si esta sobrecargado o no disponible, Opus 5 (probado
+  #                               2026-09-25: con un principal inexistente el log muestra
+  #                               "model_fallback" y responde claude-opus-5). Sin --model se usaria el
+  #                               default de /model, que puede cambiar sin que nadie lo note.
+  #   --effort high               aplica al modelo que termine respondiendo, sea el principal o el respaldo
   claude_args:
     - -p
+    - --model
+    - claude-opus-5-5
+    - --fallback-model
+    - claude-opus-5
+    - --effort
+    - high
     - --tools
     - "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch"
     - --allowedTools

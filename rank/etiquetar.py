@@ -46,6 +46,7 @@ class Etiquetador:
         self.chile = _patrones(cfg_ranking.get("keywords_chile") or ["chile"])
         self.tema_chile = _patrones(cfg_ranking.get("keywords_tema_chile") or [])
         self.bloque_chile = _patrones(cfg_ranking.get("keywords_bloque_chile") or [])
+        self.tema_prioritario = _patrones(cfg_ranking.get("keywords_tema_prioritario") or [])
         self.leakers = {n: _patrones(alias) for n, alias in (leakers or {}).items()}
 
     @staticmethod
@@ -84,6 +85,9 @@ class Etiquetador:
 
     def tema_bloque_chile(self, texto_norm: str) -> bool:
         return any(p.search(texto_norm) for p in self.bloque_chile)
+
+    def es_tema_prioritario(self, texto_norm: str) -> bool:
+        return any(p.search(texto_norm) for p in self.tema_prioritario)
 
     def tema_tecnologico(self, texto_norm: str, empresas: list[str]) -> bool:
         """Para medios chilenos generales: solo cuenta como es_chile si habla de tecnologia."""

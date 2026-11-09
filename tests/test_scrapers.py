@@ -21,6 +21,28 @@ def test_scraper_html_cambiado_devuelve_vacio(caplog):
     assert any("no encontro nada" in r.message for r in caplog.records)
 
 
+def test_scraper_fcfm_uchile_fixture_real():
+    html = (FIXTURES / "fcfm_uchile_noticias.html").read_text(encoding="utf-8")
+    items = sc.scrapear_fcfm_uchile(html, "https://ingenieria.uchile.cl/noticias")
+    assert len(items) >= 10
+    assert all(i["url"].startswith("https://ingenieria.uchile.cl/noticias/") for i in items)
+    assert all(i["titulo"] for i in items)
+    # la pagina no trae fecha por item: el scraper no debe inventarla
+    assert all(i["publicado_utc"] is None for i in items)
+    assert any("dcc" in i["titulo"].lower() for i in items)
+
+
+def test_scraper_fcfm_uchile_sin_fecha_cae_a_obtenido_utc():
+    fuente = {"nombre": "fcfm_uchile", "medio": "FCFM Universidad de Chile", "url": "https://ingenieria.uchile.cl/noticias",
+              "categoria": "chile"}
+    html = '<a class="mod__list-item" href="/noticias/1/titulo-x"><h3>Titulo X</h3><p>Resumen.</p></a>'
+    arts = sc.articulos_desde_scraper("fcfm_uchile_noticias", html, fuente, [], "2026-09-25T00:00:00+00:00")
+    a = arts[0]
+    assert a["url"] == "https://ingenieria.uchile.cl/noticias/1/titulo-x"
+    assert a["publicado_utc"] == "2026-09-25T00:00:00+00:00"
+    assert a["resumen"] == "Resumen."
+
+
 def test_articulos_desde_scraper_completa_campos():
     html = '<article><h3>Titulo X</h3><a href="/noticias/x/">Ver</a><time>05/09/2026</time><p>Resumen.</p></article>'
     fuente = {"nombre": "usm", "medio": "Informatica USM", "url": "https://informatica.usm.cl/noticias/", "categoria": "chile"}

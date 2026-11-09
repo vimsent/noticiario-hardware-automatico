@@ -37,6 +37,24 @@ def test_prompt_real_renderiza_completo():
     assert "## REGLAS DURAS" in texto and "## FILTRACIONES" in texto
 
 
+def test_ejecutar_guion_alternativo_no_toca_input(tmp_path, monkeypatch):
+    """--guion permite escribir en otra ruta, para comparar sin pisar input/guion.md."""
+    cfg = cargar_config()
+    cfg["redaccion"]["prompt_path"] = str(RAIZ_REAL / "prompts" / "redaccion.md")  # absoluta: sobrevive el RAIZ falso
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "runs" / "2026-09-14").mkdir(parents=True)
+    (tmp_path / "runs" / "2026-09-14" / "candidatas.json").write_text("{}", encoding="utf-8")
+    (tmp_path / "runs" / "2026-09-14" / "apoyo.json").write_text('{"dolar": {}}', encoding="utf-8")
+    monkeypatch.setattr(run_claude, "RAIZ", tmp_path)
+
+    alterno = "comparaciones/2026-09-14/manual/guion.md"
+    resultado = run_claude.ejecutar(cfg, date(2026, 9, 8), date(2026, 9, 14), 3, solo_prompt=True, guion=alterno)
+    assert resultado.ok  # solo_prompt: no valida nada, solo confirma que no revento
+    assert not (tmp_path / "input" / "guion.md").exists()
+    prompt = (tmp_path / "runs" / "2026-09-14" / "prompt.md").read_text(encoding="utf-8")
+    assert alterno in prompt
+
+
 def test_barrido_procesar(tmp_path):
     con = db.conectar(tmp_path / "t.db")
     hallazgos = [

@@ -91,6 +91,8 @@ def construir_grupo(grupo: Grupo, etiquetador: Etiquetador, cfg: dict[str, Any],
     fecha_hecho = mas_antiguo.fecha
     evento_mayor = bool(etiquetas["evento_mayor"] and empresas)
     tema_chile = bool(es_chile and etiquetador.tema_bloque_chile(texto_norm))
+    # solo por titulo: por resumen se cuelan notas de bolsa que nombran a ASML de pasada
+    tema_prioritario = etiquetador.es_tema_prioritario(titulos_norm)
 
     return {
         "clave": clave_grupo(mas_antiguo.url),
@@ -106,9 +108,10 @@ def construir_grupo(grupo: Grupo, etiquetador: Etiquetador, cfg: dict[str, Any],
         "leakers": etiquetas["leakers"],
         "es_chile": int(es_chile),
         "tema_chile": int(tema_chile),
+        "tema_prioritario": int(tema_prioritario),
         "rezagada": int(fecha_hecho < desde),
         "score_prelim": score_prelim(len(medios), score_comunidad, evento_mayor, oficial,
-                                     bool(etiquetas["es_rumor"]), cfg.get("pesos"), tema_chile),
+                                     bool(etiquetas["es_rumor"]), cfg.get("pesos"), tema_chile, tema_prioritario),
         "articulos": [
             {"medio": a.medio, "titulo": a.titulo, "url": a.url, "fecha": a.publicado_utc,
              "texto_ok": int(a.texto_ok), "comunidad": int(a.es_comunidad),
@@ -142,7 +145,8 @@ def generar_candidatas(con: sqlite3.Connection, cfg: dict[str, Any], desde: date
         db.insertar_grupo(con, run, d, d["_ids"])
     con.commit()
 
-    elegidos = exportar.seleccionar(docs, int(rk.get("max_grupos", 50)), int(rk.get("max_grupos_chile", 25)))
+    elegidos = exportar.seleccionar(docs, int(rk.get("max_grupos", 50)), int(rk.get("max_grupos_chile", 25)),
+                                    int(rk.get("max_grupos_prioritarios", 0)))
     for d in elegidos:
         d.pop("_ids", None)
     return exportar.armar_documento(
