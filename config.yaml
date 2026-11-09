@@ -123,13 +123,14 @@ ranking:
   max_grupos: 50
   max_grupos_chile: 35
   max_grupos_prioritarios: 20     # cupo garantizado en candidatas.json para temas prioritarios
+  max_grupos_litio: 15            # cupo garantizado para la seccion BATERIAS DE LITIO Y CADENA DE VALOR EN CHILE
   max_articulos_con_texto: 3
   max_chars_texto: 6000
   # bloque_chile: bono para grupos es_chile que calzan con keywords_bloque_chile (los temas del
   # bloque Chile del prompt). No esta en la formula original de CLAUDE.md; con 0 se desactiva.
   # tema_prioritario: bono para grupos que calzan con keywords_tema_prioritario (seccion TEMAS
   # PRIORITARIOS de los prompts). Tampoco esta en la formula original; con 0 se desactiva.
-  pesos: {medios: 3, comunidad: 2, evento_mayor: 4, oficial: 1, rumor: -1, bloque_chile: 2, tema_prioritario: 3}
+  pesos: {medios: 3, comunidad: 2, evento_mayor: 4, oficial: 1, rumor: -1, bloque_chile: 2, tema_prioritario: 3, tema_litio: 3}
   prioridad_medios: [oficial, hardware, general, chile, comunidad]
   # Las keywords se comparan en minusculas y sin tildes sobre titulo y resumen.
   empresas:
@@ -310,11 +311,58 @@ ranking:
     - ingenieria informatica
     - ingenieria civil informatica
     - practica profesional
+    - litio
+    - baterias
+    - bess
     - semiconductores
     - chips
+  # seccion BATERIAS DE LITIO Y CADENA DE VALOR EN CHILE de los prompts: exporta tema_litio: 1,
+  # suma pesos.tema_litio y tiene cupo propio (max_grupos_litio). Se busca solo en titulos.
+  # "bateria" sola no: arrastra notas de autonomia de notebooks y celulares.
+  keywords_tema_litio:
+    - litio
+    - lithium
+    - novaandino
+    - nova andino
+    - salar futuro
+    - maricunga
+    - productor especializado
+    - albemarle
+    - sqm
+    - cochilco
+    - catodo
+    - catodos
+    - cathode
+    - cathodes
+    - lfp
+    - nmc
+    - bess
+    - almacenamiento de energia
+    - almacenamiento en baterias
+    - battery storage
+    - energy storage
+    - celdas de bateria
+    - battery cell
+    - battery cells
+    - reciclaje de baterias
+    - battery recycling
+    - ion sodio
+    - ion-sodio
+    - sodium-ion
+    - sodium ion
+    - extraccion directa
+    - direct lithium extraction
+    - dle
+    - estrategia nacional del litio
   # Un articulo de un medio chileno general (feeds con filtro_tema: true) o una mencion suelta
   # de chile solo cuenta como es_chile si menciona una empresa de la lista o uno de estos temas.
   keywords_tema_chile:
+    - litio
+    - lithium
+    - baterias
+    - bess
+    - almacenamiento de energia
+    - electromovilidad
     - data center
     - datacenter
     - datacenters

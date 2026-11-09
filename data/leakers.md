@@ -27,9 +27,10 @@ Punto de partida editorial. Lo corrige el modelo semana a semana; nunca se borra
 ### HXL
 - Alias: 9550pro, @9550pro
 - Nivel: B
-- Base del nivel: punto de partida editorial
+- Base del nivel: punto de partida editorial. Evidencia agregada en ep 6 (metodo manual, fusionado el 2026-11-08): su filtración de abril de 2026 sobre el regreso del Ryzen 7 5800X3D como edición aniversario de AM4 se cumplió (Tom's Hardware, 2 de junio de 2026). Un solo acierto documentado no basta para subirlo a A.
 - Rumores registrados:
-- Balance: cumplidos 0, fallidos 0, pendientes 0
+  - ep 6 (2026-10-26): (filtración de abril de 2026, mencionada de pasada) AMD relanzaría el Ryzen 7 5800X3D como edición del décimo aniversario de AM4 — resultado: CUMPLIDO (reanunciado en Computex 2026, Tom's Hardware, 2 de junio de 2026)
+- Balance: cumplidos 1, fallidos 0, pendientes 0
 
 ### momomo_us
 - Nivel: B

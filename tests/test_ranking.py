@@ -231,3 +231,25 @@ def test_seleccionar_cupo_prioritarios():
     # sin cupo, los prioritarios de bajo puntaje quedan fuera como antes
     sel = exportar.seleccionar(grupos, max_grupos=2, max_grupos_chile=0)
     assert [x["clave"] for x in sel] == ["a", "b"]
+
+
+def test_tema_litio_marca_y_bono(cfg, leakers):
+    rk = dict(cfg["ranking"], keywords_tema_litio=["litio", "lithium", "bess", "sodium-ion"],
+              pesos={**cfg["ranking"]["pesos"], "tema_litio": 2})
+    et = Etiquetador(rk, leakers)
+    normal = art(1, "Nuevo mouse gamer con sensor de 30000 dpi")
+    litio = art(2, "Corfo adjudica planta de cátodos de litio en Antofagasta")
+    sodio = art(3, "CATL starts sodium-ion mass production")
+    g = [construir_grupo(Grupo(articulos=[a]), et, rk, DESDE, MEDIOS) for a in (normal, litio, sodio)]
+    assert [x["tema_litio"] for x in g] == [0, 1, 1]
+    assert g[2]["score_prelim"] == g[0]["score_prelim"] + 2
+    assert score_prelim(1, 0, False, False, False, {"tema_litio": 2}, tema_litio=True) == 5.0
+
+
+def test_seleccionar_cupo_litio():
+    def g(clave, score, litio=0):
+        return {"clave": clave, "score_prelim": score, "n_medios": 1, "evento_mayor": 0, "es_chile": 0,
+                "tema_prioritario": 0, "tema_litio": litio, "fecha_hecho": "2026-11-05"}
+    grupos = [g("a", 9.0), g("b", 8.0), g("l1", 0.5, litio=1), g("l2", 0.4, litio=1)]
+    sel = exportar.seleccionar(grupos, max_grupos=1, max_grupos_chile=0, max_grupos_litio=1)
+    assert [x["clave"] for x in sel] == ["a", "l1"]

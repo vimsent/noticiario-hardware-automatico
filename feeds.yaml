@@ -549,3 +549,58 @@
 - {nombre: hn_intel, medio: Hacker News, tipo: hn, consulta: intel, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
 - {nombre: hn_tsmc, medio: Hacker News, tipo: hn, consulta: tsmc, limite: 100, min_puntos: 10, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
 - {nombre: hn_gpu, medio: Hacker News, tipo: hn, consulta: gpu, limite: 100, min_puntos: 20, categoria: comunidad, idioma: en, texto_completo: false, activo: true}
+
+# ---------------------------------------------------------------------------
+# agregadas el 2026-11-08: fuentes que se consultaron en los episodios manuales
+# (comparaciones/2026-10-26 y 2026-11-01) y en runs/barrido_acumulado.md, y que el
+# pipeline no tenia. Urls verificadas el 2026-11-08 con el user agent del pipeline.
+# Sin feed usable: trendforce (feed_v2 congelado en julio de 2026), sec.gov (403 sin
+# correo en el user agent), bloomberg, reuters, the information, scmp, prensa coreana,
+# anci.gob.cl, bnamericas, reporte minero, corfo, cochilco, codelco y sqm. Entran por
+# consultas de google news.
+# ---------------------------------------------------------------------------
+- {nombre: intel_ir, medio: Intel, tipo: rss, url: "https://www.intc.com/news-events/press-releases/rss", categoria: oficial, idioma: en, texto_completo: true, activo: true}
+- {nombre: tweaktown, medio: TweakTown, tipo: rss, url: "https://www.tweaktown.com/feeds/news-mf.xml", categoria: hardware, idioma: en, texto_completo: true, activo: true}
+- {nombre: techspot, medio: TechSpot, tipo: rss, url: "https://www.techspot.com/backend.xml", categoria: hardware, idioma: en, texto_completo: true, activo: true}
+- {nombre: eteknix, medio: eTeknix, tipo: rss, url: "https://www.eteknix.com/feed/", categoria: hardware, idioma: en, texto_completo: true, activo: true}
+- {nombre: digitimes, medio: DigiTimes, tipo: rss, url: "https://www.digitimes.com/rss/daily.xml", categoria: hardware, idioma: en, texto_completo: false, activo: true}
+- {nombre: sammobile, medio: SamMobile, tipo: rss, url: "https://www.sammobile.com/feed/", categoria: hardware, idioma: en, texto_completo: true, activo: true}
+- {nombre: omgubuntu, medio: OMG! Ubuntu, tipo: rss, url: "https://www.omgubuntu.co.uk/feed", categoria: hardware, idioma: en, texto_completo: true, activo: true}
+- {nombre: quantum_insider, medio: The Quantum Insider, tipo: rss, url: "https://thequantuminsider.com/feed/", categoria: general, idioma: en, texto_completo: true, activo: true}
+- {nombre: gn_trendforce, medio: TrendForce, tipo: google_news, consulta: "site:trendforce.com", hl: en-US, gl: US, ceid: "US:en", categoria: hardware, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_bloomberg_chips, medio: Bloomberg, tipo: google_news, consulta: 'site:bloomberg.com (chip OR chips OR semiconductor OR Nvidia OR TSMC OR Intel OR Samsung OR "SK Hynix" OR Micron OR ASML)', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_reuters_chips, medio: Reuters, tipo: google_news, consulta: 'site:reuters.com (chip OR chips OR semiconductor OR Nvidia OR TSMC OR Intel OR Micron OR "SK Hynix" OR ASML)', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_theinformation, medio: The Information, tipo: google_news, consulta: "site:theinformation.com (Nvidia OR chips OR AMD OR Intel OR TSMC)", hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_finanzas_chips, medio: Google News, tipo: google_news, consulta: '(site:fool.com OR site:247wallst.com OR site:investing.com OR site:finance.yahoo.com) (Nvidia OR AMD OR Intel OR Micron OR TSMC OR "SK Hynix" OR ASML)', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_prensa_corea, medio: Google News, tipo: google_news, consulta: '(site:koreaherald.com OR site:en.sedaily.com OR site:koreajoongangdaily.joins.com OR site:biz.chosun.com) (Samsung OR "SK hynix" OR HBM OR DRAM)', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_scmp_chips, medio: South China Morning Post, tipo: google_news, consulta: "site:scmp.com (chip OR semiconductor OR Huawei OR SMIC OR CXMT OR EUV OR lithography)", hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_calcalist, medio: Calcalist, tipo: google_news, consulta: "site:calcalistech.com (Intel OR Nvidia OR chip)", hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+- {nombre: gn_laboral_chips, medio: Google News, tipo: google_news, consulta: '(Micron OR Samsung OR "SK hynix" OR TSMC) (union OR strike OR walkout)', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}
+
+# chile: medios que aparecieron en los bloques Chile manuales
+- {nombre: trendtic, medio: Trendtic, tipo: rss, url: "https://www.trendtic.cl/feed/", categoria: chile, idioma: es, texto_completo: true, activo: true}
+- {nombre: veredictum, medio: Veredictum, tipo: rss, url: "https://veredictum.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: cpi_chile, medio: CPI, tipo: rss, url: "https://cpichile.org/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: tour_innovacion, medio: Tour Innovacion, tipo: rss, url: "https://www.tourinnovacion.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: portal_innova, medio: Portal Innova, tipo: rss, url: "https://portalinnova.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: ecosistema_startup, medio: El Ecosistema Startup, tipo: rss, url: "https://ecosistemastartup.com/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: riotimes, medio: The Rio Times, tipo: rss, url: "https://www.riotimesonline.com/feed/", categoria: chile, idioma: en, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: infobae_tecno, medio: Infobae, tipo: rss, url: "https://www.infobae.com/arc/outboundfeeds/rss/category/tecno/", categoria: general, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_anci, medio: ANCI, tipo: google_news, consulta: "site:anci.gob.cl", hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+
+# chile: baterias de litio y cadena de valor (seccion del prompt v2 del 2026-10-26).
+# Las busquedas fijas del prompt manual, agrupadas con OR cuando por separado no traian nada.
+- {nombre: electromineria, medio: Electrominería, tipo: rss, url: "https://electromineria.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: mineria_chilena, medio: Minería Chilena, tipo: rss, url: "https://www.mch.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: revista_ei, medio: Revista Electricidad, tipo: rss, url: "https://www.revistaei.cl/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: pv_magazine_latam, medio: pv magazine Latam, tipo: rss, url: "https://www.pv-magazine-latam.com/feed/", categoria: chile, idioma: es, texto_completo: true, filtro_tema: true, activo: true}
+- {nombre: gn_litio_novaandino, medio: Google News, tipo: google_news, consulta: 'NovaAndino OR "Salar Futuro" OR Maricunga litio', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_corfo, medio: Google News, tipo: google_news, consulta: 'Corfo litio OR "productor especializado" litio OR Albemarle Corfo', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_cadena, medio: Google News, tipo: google_news, consulta: 'cátodos litio Chile OR "fábrica de celdas" Chile OR "celdas de litio" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_bess, medio: Google News, tipo: google_news, consulta: 'baterías BESS Chile OR "almacenamiento de energía" Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_politica, medio: Google News, tipo: google_news, consulta: '"Estrategia Nacional del Litio" OR concesibilidad litio', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_reciclaje, medio: Google News, tipo: google_news, consulta: 'reciclaje baterías Chile', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_precio, medio: Google News, tipo: google_news, consulta: 'Chile litio precio', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_prensa, medio: Google News, tipo: google_news, consulta: '(site:bnamericas.com OR site:reporteminero.cl) litio', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_litio_oficial, medio: Google News, tipo: google_news, consulta: '(site:corfo.gob.cl OR site:cochilco.cl OR site:codelco.com OR site:sqm.com) litio', hl: es-419, gl: CL, ceid: "CL:es-419", categoria: chile, idioma: es, texto_completo: false, activo: true}
+- {nombre: gn_sodio_litio, medio: Google News, tipo: google_news, consulta: 'sodium-ion lithium price', hl: en-US, gl: US, ceid: "US:en", categoria: general, idioma: en, texto_completo: false, activo: true}

@@ -18,8 +18,9 @@ def ordenar(grupos: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def seleccionar(grupos: list[dict[str, Any]], max_grupos: int, max_grupos_chile: int,
-                max_grupos_prioritarios: int = 0) -> list[dict[str, Any]]:
-    """Todos los eventos mayores, hasta N de Chile, hasta N de temas prioritarios y los N mejores del resto."""
+                max_grupos_prioritarios: int = 0, max_grupos_litio: int = 0) -> list[dict[str, Any]]:
+    """Todos los eventos mayores, hasta N de Chile, hasta N de temas prioritarios, hasta N de litio
+    y los N mejores del resto."""
     ordenados = ordenar(grupos)
     elegidos: list[dict[str, Any]] = []
     claves: set[str] = set()
@@ -42,6 +43,11 @@ def seleccionar(grupos: list[dict[str, Any]], max_grupos: int, max_grupos_chile:
         if g.get("tema_prioritario") and g["clave"] not in claves and n_prio < max_grupos_prioritarios:
             agregar(g)
             n_prio += 1
+    n_litio = 0
+    for g in ordenados:
+        if g.get("tema_litio") and g["clave"] not in claves and n_litio < max_grupos_litio:
+            agregar(g)
+            n_litio += 1
     n_resto = 0
     for g in ordenados:
         if g["clave"] not in claves and n_resto < max_grupos:
